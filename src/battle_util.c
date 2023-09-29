@@ -8994,7 +8994,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         break;
     case ABILITY_NORMALIZE:
         if (moveType == TYPE_NORMAL && gBattleStruct->ateBoost[battlerAtk])
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_PUNK_ROCK:
         if (gBattleMoves[move].soundMove)
@@ -9335,6 +9335,10 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
     case ABILITY_GUTS:
         if (gBattleMons[battlerAtk].status1 & STATUS1_ANY && IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_UNSEEN_FIST:
+        if (IS_BATTLER_PROTECTED(battlerDef))
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
         break;
     }
 
