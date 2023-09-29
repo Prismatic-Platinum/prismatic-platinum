@@ -133,7 +133,7 @@ EWRAM_DATA bool8 gDexnavBattle = FALSE;
 static void Task_DexNavWaitFadeIn(u8 taskId);
 static void Task_DexNavMain(u8 taskId);
 static void PrintCurrentSpeciesInfo(void);
-// Search
+// SEARCH
 static bool8 TryStartHiddenMonFieldEffect(u8 environment, u8 xSize, u8 ySize, bool8 smallScan);
 static void DexNavGenerateMoveset(u16 species, u8 searchLevel, u8 encounterLevel, u16* moveDst);
 static u16 DexNavGenerateHeldItem(u16 species, u8 searchLevel);
@@ -436,7 +436,7 @@ static const struct CompressedSpriteSheet sHiddenMonIconSpriteSheet = {sHiddenMo
 
 //// functions
 ///////////////////////
-//// DexNav Search ////
+//// DEXNAV SEARCH ////
 ///////////////////////
 static s16 GetSearchWindowY(void)
 {
@@ -588,7 +588,7 @@ static void RemoveDexNavWindowAndGfx(void)
 
 
 //////////////////////
-////DexNav Search/////
+////DEXNAV SEARCH/////
 //////////////////////
 static u8 GetPlayerDistance(s16 x, s16 y)
 {
@@ -961,7 +961,7 @@ static void DexNavDrawIcons(void)
 }
 
 /////////////////////
-//// Search TASK ////
+//// SEARCH TASK ////
 /////////////////////
 bool8 TryStartDexnavSearch(void)
 {
@@ -1207,7 +1207,7 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
 }
 
 //////////////////////////////
-//// DexNav MON GENERATOR ////
+//// DEXNAV MON GENERATOR ////
 //////////////////////////////
 static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityNum, u16 item, u16* moves)
 {
