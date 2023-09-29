@@ -4603,6 +4603,7 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
 {
     u32 speed = gBattleMons[battler].speed;
     u32 highestStat = GetHighestStatId(battler);
+    u32 species = gBattleMons[battler].species;
 
     // weather abilities
     if (WEATHER_HAS_EFFECT)
@@ -4615,6 +4616,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
             speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
             speed *= 2;
+        else if (ability == ABILITY_FLOWER_GIFT && species == CHERRIM_SUNSHINE && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_SUN)
+            speed *= 1.5;
     }
 
     // other abilities
