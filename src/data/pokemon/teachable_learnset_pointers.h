@@ -683,7 +683,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_PANGORO] = sPangoroTeachableLearnset,
     [SPECIES_FURFROU] = sFurfrouTeachableLearnset,
     [SPECIES_ESPURR] = sEspurrTeachableLearnset,
-    [SPECIES_MEOWSTIC] = sMeowsticTeachableLearnset,
+    [SPECIES_MEOWSTIC] = sMeowsticMaleTeachableLearnset,
     [SPECIES_HONEDGE] = sHonedgeTeachableLearnset,
     [SPECIES_DOUBLADE] = sDoubladeTeachableLearnset,
     [SPECIES_AEGISLASH] = sAegislashTeachableLearnset,
@@ -752,8 +752,8 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_CUTIEFLY] = sCutieflyTeachableLearnset,
     [SPECIES_RIBOMBEE] = sRibombeeTeachableLearnset,
     [SPECIES_ROCKRUFF] = sRockruffTeachableLearnset,
-    [SPECIES_LYCANROC] = sLycanrocTeachableLearnset,
-    [SPECIES_WISHIWASHI] = sWishiwashiTeachableLearnset,
+    [SPECIES_LYCANROC] = sLycanrocMiddayTeachableLearnset,
+    [SPECIES_WISHIWASHI] = sWishiwashiSoloTeachableLearnset,
     [SPECIES_MAREANIE] = sMareanieTeachableLearnset,
     [SPECIES_TOXAPEX] = sToxapexTeachableLearnset,
     [SPECIES_MUDBRAY] = sMudbrayTeachableLearnset,
@@ -884,7 +884,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_SNOM] = sSnomTeachableLearnset,
     [SPECIES_FROSMOTH] = sFrosmothTeachableLearnset,
     [SPECIES_STONJOURNER] = sStonjournerTeachableLearnset,
-    [SPECIES_EISCUE] = sEiscueTeachableLearnset,
+    [SPECIES_EISCUE] = sEiscueIceTeachableLearnset,
     [SPECIES_INDEEDEE] = sIndeedeeTeachableLearnset,
     [SPECIES_MORPEKO] = sMorpekoTeachableLearnset,
     [SPECIES_CUFANT] = sCufantTeachableLearnset,
@@ -1204,7 +1204,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_FLOETTE_ORANGE_FLOWER] = sFloetteTeachableLearnset,
     [SPECIES_FLOETTE_BLUE_FLOWER] = sFloetteTeachableLearnset,
     [SPECIES_FLOETTE_WHITE_FLOWER] = sFloetteTeachableLearnset,
-    [SPECIES_FLOETTE_ETERNAL_FLOWER] = sFloetteEternalFlowerTeachableLearnset,
+    [SPECIES_FLOETTE_ETERNAL_FLOWER] = sFloetteEternalTeachableLearnset,
     // Florges
     [SPECIES_FLORGES_YELLOW_FLOWER] = sFlorgesTeachableLearnset,
     [SPECIES_FLORGES_ORANGE_FLOWER] = sFlorgesTeachableLearnset,
@@ -1253,7 +1253,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_LYCANROC_MIDNIGHT] = sLycanrocMidnightTeachableLearnset,
     [SPECIES_LYCANROC_DUSK] = sLycanrocDuskTeachableLearnset,
     // Wishiwashi
-    [SPECIES_WISHIWASHI_SCHOOL] = sWishiwashiTeachableLearnset,
+    [SPECIES_WISHIWASHI_SCHOOL] = sWishiwashiSoloTeachableLearnset,
     // Silvally
     [SPECIES_SILVALLY_FIGHTING] = sSilvallyTeachableLearnset,
     [SPECIES_SILVALLY_FLYING] = sSilvallyTeachableLearnset,
@@ -1315,7 +1315,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_ALCREMIE_CARAMEL_SWIRL] = sAlcremieTeachableLearnset,
     [SPECIES_ALCREMIE_RAINBOW_SWIRL] = sAlcremieTeachableLearnset,
     // Eiscue
-    [SPECIES_EISCUE_NOICE_FACE] = sEiscueTeachableLearnset,
+    [SPECIES_EISCUE_NOICE_FACE] = sEiscueIceTeachableLearnset,
     // Indeedee
     [SPECIES_INDEEDEE_FEMALE] = sIndeedeeFemaleTeachableLearnset,
     // Morpeko
