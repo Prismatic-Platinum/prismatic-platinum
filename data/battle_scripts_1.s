@@ -3187,6 +3187,7 @@ BattleScript_MoveMissed::
 BattleScript_EffectDarkVoid::
 .if B_DARK_VOID_FAIL >= GEN_7
 	jumpifspecies BS_ATTACKER, SPECIES_DARKRAI, BattleScript_EffectSleep
+	jumpifspecies BS_ATTACKER, SPECIES_DARKRAI_D, BattleScript_EffectSleep
 	goto BattleScript_PokemonCantUseTheMove
 .endif
 BattleScript_EffectSleep::

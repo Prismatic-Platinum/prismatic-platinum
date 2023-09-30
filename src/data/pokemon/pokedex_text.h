@@ -5398,4 +5398,13 @@ const u8 gEnamorusPokedexText[] = _(
     "winter. According to legend, this\n"
     "Pokémon's love gives rise to the\n"
     "budding of fresh life across the land.");
+
+//Distortion Forms
+
+const u8 gDarkrai_DPokedexText[] = _(
+    "Its behaviour has become highly\n"
+    "unstable, attacking anyone in sight\n"
+    "with its dangerous claws. It feasts\n"
+    "upon the nightmares it inflicts.");
+
 #endif

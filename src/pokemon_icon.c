@@ -941,6 +941,10 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
     [SPECIES_SNEASLER] = gMonIcon_Sneasler,
     [SPECIES_OVERQWIL] = gMonIcon_Overqwil,
     [SPECIES_ENAMORUS] = gMonIcon_Enamorus,
+
+    //Distortion Forms
+    [SPECIES_DARKRAI_D] = gMonIcon_Darkrai_D,
+
 #endif
     [SPECIES_VENUSAUR_MEGA] = gMonIcon_VenusaurMega,
     [SPECIES_CHARIZARD_MEGA_X] = gMonIcon_CharizardMegaX,
@@ -2222,6 +2226,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_SNEASLER] = 2,
     [SPECIES_OVERQWIL] = 2,
     [SPECIES_ENAMORUS] = 1,
+    [SPECIES_DARKRAI_D] = 0,
     [SPECIES_VENUSAUR_MEGA] = 4,
     [SPECIES_CHARIZARD_MEGA_X] = 0,
     [SPECIES_CHARIZARD_MEGA_Y] = 0,

@@ -929,6 +929,9 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     [SPECIES_GENESECT_BURN_DRIVE]          = BACK_ANIM_CIRCLE_COUNTERCLOCKWISE,
     [SPECIES_GENESECT_CHILL_DRIVE]         = BACK_ANIM_CIRCLE_COUNTERCLOCKWISE,
     
+    //Distortion Forms
+    [SPECIES_DARKRAI_D]                    = BACK_ANIM_SHRINK_GROW_VIBRATE,
+
     //Gen 6
     [SPECIES_CHESPIN]                      = BACK_ANIM_H_SLIDE,
     [SPECIES_QUILLADIN]                    = BACK_ANIM_GROW,
