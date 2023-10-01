@@ -27,8 +27,8 @@ jobs:
       - name: Create PR of Changes
         run: |
           hub pull-request \
-            -b verdant-platinum:master \
-            -h verdant-platinum:template-branch \
+            -b prismatic-platinum:master \
+            -h prismatic-platinum:template-branch \
             -m "Merge changes from the RHH repository"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
