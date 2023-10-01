@@ -1254,6 +1254,10 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(SNEASLER),
     SPECIES_TO_NATIONAL(OVERQWIL),
     SPECIES_TO_NATIONAL(ENAMORUS),
+    
+    //Distortion Forms
+    SPECIES_TO_NATIONAL(DARKRAI_D),
+
 #endif
 
     // Megas
@@ -2880,6 +2884,9 @@ const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_OVERQWIL - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ENAMORUS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
 
+    //Distortion Forms
+    [SPECIES_DARKRAI_D - 1]     = ANIM_GROW_VIBRATE, 
+
     //Gen 3 Forms
     [SPECIES_CASTFORM_SUNNY - 1]   = ANIM_GROW_VIBRATE,
     [SPECIES_CASTFORM_RAINY - 1]   = ANIM_SWING_CONVEX_FAST,
@@ -3099,6 +3106,10 @@ static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
     [SPECIES_SALAMENCE - 1]  = 70,
     [SPECIES_KYOGRE - 1]     = 60,
     [SPECIES_RAYQUAZA - 1]   = 60,
+
+    //Distortion Forms
+    [SPECIES_DARKRAI_D - 1]  = 15,
+
 #if P_GEN_7_POKEMON == TRUE
     [SPECIES_TAPU_FINI - 1]  = 5,
 #endif
@@ -3513,18 +3524,18 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         else
 #endif
         {
-                u32 totalRerolls = 0;
-                if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
-                    totalRerolls += I_SHINY_CHARM_REROLLS;
-                if (LURE_STEP_COUNT != 0)
-                    totalRerolls += 1;
-                if (gIsFishingEncounter)
-                    totalRerolls += 1 + 2 * gChainFishingStreak;
+            u32 totalRerolls = 0;
+            if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+                totalRerolls += I_SHINY_CHARM_ADDITIONAL_ROLLS;
+            if (LURE_STEP_COUNT != 0)
+                totalRerolls += 1;
+            if (gIsFishingEncounter)
+                totalRerolls += 1 + 2 * gChainFishingStreak;
 
-                while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
-                {
-                    personality = Random32();
-                    totalRerolls--;
+            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
+            {
+                personality = Random32();
+                totalRerolls--;
             }
         }
     }

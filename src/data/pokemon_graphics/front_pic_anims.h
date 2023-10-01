@@ -9536,6 +9536,15 @@ static const union AnimCmd sAnim_Enamorus_1[] =
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
+
+//Distortion Forms
+static const union AnimCmd sAnim_Darkrai_D_1[] =
+{
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(1, 50),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
 #endif
 
 static const union AnimCmd sAnim_VenusaurMega_1[] =
