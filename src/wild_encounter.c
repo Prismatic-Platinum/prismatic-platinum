@@ -126,9 +126,9 @@ static bool8 CheckFeebas(u8 rod)
     u8 route119Section = 0;
     u16 spotId;
 
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE119)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE119))
-    {
+//    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE119)
+//     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE119))
+//    {
         GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
         x -= MAP_OFFSET;
         y -= MAP_OFFSET;
@@ -182,7 +182,7 @@ static bool8 CheckFeebas(u8 rod)
             if (spotId == feebasSpots[i])
                 return TRUE;
         }
-    }
+//    }
     return FALSE;
 }
 
@@ -383,15 +383,15 @@ u16 GetCurrentMapWildMonHeaderId(void)
             gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE101))
             i += VarGet(VAR_DAYNIGHT);
 
-            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ALTERING_CAVE) &&
-                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ALTERING_CAVE))
-            {
-                u16 alteringCaveId = VarGet(VAR_ALTERING_CAVE_WILD_SET);
-                if (alteringCaveId >= NUM_ALTERING_CAVE_TABLES)
-                    alteringCaveId = 0;
-
-                i += alteringCaveId;
-            }
+//            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ALTERING_CAVE) &&
+//                gSaveBlock1Ptr->location.mapNum == MAP_NUM(ALTERING_CAVE))
+//            {
+//                u16 alteringCaveId = VarGet(VAR_ALTERING_CAVE_WILD_SET);
+//                if (alteringCaveId >= NUM_ALTERING_CAVE_TABLES)
+//                    alteringCaveId = 0;
+//
+//                i += alteringCaveId;
+//            }
 
             return i;
         }
@@ -639,13 +639,13 @@ static bool8 AllowWildCheckOnNewMetatile(void)
 
 static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(SOOTOPOLIS_CITY)
-     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(SOOTOPOLIS_CITY))
-    {
+//    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(SOOTOPOLIS_CITY)
+//     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(SOOTOPOLIS_CITY))
+//    {
         return FALSE;
-    }
-
-    return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
+//    }
+//
+//    return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
 }
 
 bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)

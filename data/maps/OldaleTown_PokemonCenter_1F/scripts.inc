@@ -7,7 +7,6 @@ OldaleTown_PokemonCenter_1F_MapScripts::
 
 OldaleTown_PokemonCenter_1F_OnTransition:
 	setrespawn HEAL_LOCATION_OLDALE_TOWN
-	call Common_EventScript_UpdateBrineyLocation
 	end
 
 OldaleTown_PokemonCenter_1F_EventScript_Nurse::

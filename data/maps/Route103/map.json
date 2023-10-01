@@ -17,11 +17,6 @@
       "map": "MAP_OLDALE_TOWN",
       "offset": 0,
       "direction": "down"
-    },
-    {
-      "map": "MAP_ROUTE110",
-      "offset": -60,
-      "direction": "right"
     }
   ],
   "object_events": [
@@ -144,8 +139,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 20,
-      "y": 10,
+      "x": 17,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -291,11 +286,13 @@
       "x": 45,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_ALTERING_CAVE",
+      "dest_map": "MAP_DYNAMIC",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

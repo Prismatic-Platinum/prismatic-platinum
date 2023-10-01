@@ -259,10 +259,10 @@ static const struct ObjectEventTemplate sTrainerObjectEventTemplate =
 
 static const u32 sNextFloorMapNum[NUM_TRAINER_HILL_FLOORS] =
 {
-    [TRAINER_HILL_1F - 1] = MAP_NUM(TRAINER_HILL_2F),
-    [TRAINER_HILL_2F - 1] = MAP_NUM(TRAINER_HILL_3F),
-    [TRAINER_HILL_3F - 1] = MAP_NUM(TRAINER_HILL_4F),
-    [TRAINER_HILL_4F - 1] = MAP_NUM(TRAINER_HILL_ROOF)
+//    [TRAINER_HILL_1F - 1] = MAP_NUM(TRAINER_HILL_2F),
+//    [TRAINER_HILL_2F - 1] = MAP_NUM(TRAINER_HILL_3F),
+//    [TRAINER_HILL_3F - 1] = MAP_NUM(TRAINER_HILL_4F),
+//    [TRAINER_HILL_4F - 1] = MAP_NUM(TRAINER_HILL_ROOF)
 };
 static const u8 sTrainerPartySlots[HILL_TRAINERS_PER_FLOOR][PARTY_SIZE / 2] =
 {
@@ -292,7 +292,8 @@ void ResetTrainerHillResults(void)
 
 static u8 GetFloorId(void)
 {
-    return gMapHeader.mapLayoutId - LAYOUT_TRAINER_HILL_1F;
+//    return gMapHeader.mapLayoutId - LAYOUT_TRAINER_HILL_1F;
+    return 0;
 }
 
 u8 GetTrainerHillOpponentClass(u16 trainerId)
@@ -353,16 +354,16 @@ static void SetUpDataStruct(void)
     #ifndef FREE_TRAINER_HILL
     if (sHillData == NULL)
     {
-        sHillData = AllocZeroed(sizeof(*sHillData));
-        sHillData->floorId = gMapHeader.mapLayoutId - LAYOUT_TRAINER_HILL_1F;
+//        sHillData = AllocZeroed(sizeof(*sHillData));
+//        sHillData->floorId = gMapHeader.mapLayoutId - LAYOUT_TRAINER_HILL_1F;
 
         // This copy depends on the floor data for each challenge being directly after the
         // challenge header data, and for the field 'floors' in sHillData to come directly
         // after the field 'challenge'.
         // e.g. for HILL_MODE_NORMAL, it will copy sChallenge_Normal to sHillData->challenge and
         // it will copy sFloors_Normal to sHillData->floors
-        CpuCopy32(sChallengeData[gSaveBlock1Ptr->trainerHill.mode], &sHillData->challenge, sizeof(sHillData->challenge) + sizeof(sHillData->floors));
-        TrainerHillDummy();
+//        CpuCopy32(sChallengeData[gSaveBlock1Ptr->trainerHill.mode], &sHillData->challenge, sizeof(sHillData->challenge) + sizeof(sHillData->floors));
+//        TrainerHillDummy();
     }
     #endif
 }
@@ -678,7 +679,7 @@ void LoadTrainerHillObjectEventTemplates(void)
         bits = i << 2;
         eventTemplates[i].movementType = ((sHillData->floors[floorId].map.trainerDirections >> bits) & 0xF) + MOVEMENT_TYPE_FACE_UP;
         eventTemplates[i].trainerRange_berryTreeId = (sHillData->floors[floorId].map.trainerRanges >> bits) & 0xF;
-        eventTemplates[i].script = TrainerHill_EventScript_TrainerBattle;
+//        eventTemplates[i].script = TrainerHill_EventScript_TrainerBattle;
         gSaveBlock2Ptr->frontier.trainerIds[i] = i + 1;
     }
 
@@ -759,13 +760,13 @@ void GenerateTrainerHillFloorLayout(u16 *mapArg)
 bool32 InTrainerHill(void)
 {
     bool32 ret;
-
-    if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_1F
-        || gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_2F
-        || gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_3F
-        || gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_4F)
-        ret = TRUE;
-    else
+//
+//    if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_1F
+//        || gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_2F
+//        || gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_3F
+//        || gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_4F)
+//        ret = TRUE;
+//    else
         ret = FALSE;
 
     return ret;
@@ -774,43 +775,44 @@ bool32 InTrainerHill(void)
 u8 GetCurrentTrainerHillMapId(void)
 {
     u8 mapId;
-
-    if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_1F)
-        mapId = TRAINER_HILL_1F;
-    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_2F)
-        mapId = TRAINER_HILL_2F;
-    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_3F)
-        mapId = TRAINER_HILL_3F;
-    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_4F)
-        mapId = TRAINER_HILL_4F;
-    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_ROOF)
-        mapId = TRAINER_HILL_ROOF;
-    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_ENTRANCE)
-        mapId = TRAINER_HILL_ENTRANCE;
-    else
+//
+//    if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_1F)
+//        mapId = TRAINER_HILL_1F;
+//    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_2F)
+//        mapId = TRAINER_HILL_2F;
+//    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_3F)
+//        mapId = TRAINER_HILL_3F;
+//    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_4F)
+//        mapId = TRAINER_HILL_4F;
+//    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_ROOF)
+//        mapId = TRAINER_HILL_ROOF;
+//    else if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_ENTRANCE)
+//        mapId = TRAINER_HILL_ENTRANCE;
+//    else
         mapId = 0;
 
     return mapId;
 }
 
 // Unused
-static bool32 OnTrainerHillRoof(void)
-{
-    bool32 onRoof;
-
-    if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_ROOF)
-        onRoof = TRUE;
-    else
-        onRoof = FALSE;
-
-    return onRoof;
-}
+//static bool32 OnTrainerHillRoof(void)
+//{
+//    bool32 onRoof;
+//
+//    if (gMapHeader.mapLayoutId == LAYOUT_TRAINER_HILL_ROOF)
+//        onRoof = TRUE;
+//    else
+//        onRoof = FALSE;
+//
+//    return onRoof;
+//}
 
 const struct WarpEvent* SetWarpDestinationTrainerHill4F(void)
 {
-    const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(TRAINER_HILL_4F), MAP_NUM(TRAINER_HILL_4F));
+//    const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(TRAINER_HILL_4F), MAP_NUM(TRAINER_HILL_4F));
 
-    return &header->events->warps[1];
+//    return &header->events->warps[1];
+    return 0;
 }
 
 // For warping from the roof in challenges where the 4F is not the final challenge floor
@@ -827,8 +829,9 @@ const struct WarpEvent* SetWarpDestinationTrainerHillFinalFloor(u8 warpEventId)
     if (numFloors == 0 || numFloors > NUM_TRAINER_HILL_FLOORS)
         numFloors = NUM_TRAINER_HILL_FLOORS;
 
-    header = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(TRAINER_HILL_4F), sNextFloorMapNum[numFloors - 1]);
-    return &header->events->warps[0];
+//    header = Overworld_GetMapHeaderByGroupAndId(MAP_GROUP(TRAINER_HILL_4F), sNextFloorMapNum[numFloors - 1]);
+//    return &header->events->warps[0];
+    return 0;
 }
 
 u16 LocalIdToHillTrainerId(u8 localId)
@@ -873,7 +876,7 @@ void SetHillTrainerFlag(void)
 
 const u8 *GetTrainerHillTrainerScript(void)
 {
-    return TrainerHill_EventScript_TrainerBattle;
+//    return TrainerHill_EventScript_TrainerBattle;
 }
 
 static void ShowTrainerHillPostBattleText(void)

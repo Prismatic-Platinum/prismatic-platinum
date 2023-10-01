@@ -200,30 +200,6 @@ static const struct {
         .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
         .level = 3,
         .location = MAP_NUM(ROUTE102)
-    },
-    {
-        .species = SPECIES_NUZLEAF,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 15,
-        .location = MAP_NUM(ROUTE114),
-    },
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 13,
-        .location = MAP_NUM(ROUTE117),
-    },
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_GIGA_DRAIN, MOVE_FRUSTRATION, MOVE_SOLAR_BEAM, MOVE_LEECH_SEED},
-        .level = 25,
-        .location = MAP_NUM(ROUTE120),
-    },
-    {
-        .species = SPECIES_SKITTY,
-        .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
-        .level = 8,
-        .location = MAP_NUM(ROUTE116),
     }
 };
 
@@ -834,15 +810,15 @@ void UpdateTVScreensOnMap(int width, int height)
     case PLAYERS_HOUSE_TV_MOVIE:
         // Don't flash TV for movie text in player's house
         break;
-//  case PLAYERS_HOUSE_TV_NONE:
+    case PLAYERS_HOUSE_TV_NONE:
     default:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_COVE_LILY_MOTEL_1F)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
-        {
+//        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_COVE_LILY_MOTEL_1F)
+//         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
+//        {
             // NPC in Lilycove Hotel is always watching TV
-            SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
-        }
-        else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir()))
+//            SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
+//        }
+        if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir()))
         {
             FlagClear(FLAG_SYS_TV_WATCH);
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
@@ -1491,35 +1467,35 @@ static void InterviewAfter_BravoTrainerBattleTowerProfile(void)
 
 void TryPutSmartShopperOnAir(void)
 {
-    TVShow *show;
-    u8 i;
+//    TVShow *show;
+//    u8 i;
 
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(TRAINER_HILL_ENTRANCE))
-     && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_MART) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_MART))
-     && !rbernoulli(1, 3))
-    {
-        sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
-        if (sCurTVShowSlot != -1 && IsRecordMixShowAlreadySpawned(TVSHOW_SMART_SHOPPER, FALSE) != TRUE)
-        {
-            SortPurchasesByQuantity();
-            if (gMartPurchaseHistory[0].quantity >= 20)
-            {
-                show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
-                show->smartshopperShow.kind = TVSHOW_SMART_SHOPPER;
-                show->smartshopperShow.active = FALSE; // NOTE: Show is not active until passed via Record Mix.
-                show->smartshopperShow.shopLocation = gMapHeader.regionMapSectionId;
-                for (i = 0; i < SMARTSHOPPER_NUM_ITEMS; i++)
-                {
-                    show->smartshopperShow.itemIds[i] = gMartPurchaseHistory[i].itemId;
-                    show->smartshopperShow.itemAmounts[i] = gMartPurchaseHistory[i].quantity;
-                }
-                show->smartshopperShow.priceReduced = IsPokeNewsActive(POKENEWS_SLATEPORT);
-                StringCopy(show->smartshopperShow.playerName, gSaveBlock2Ptr->playerName);
-                StorePlayerIdInRecordMixShow(show);
-                show->smartshopperShow.language = gGameLanguage;
-            }
-        }
-    }
+//    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(TRAINER_HILL_ENTRANCE))
+//     && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_MART) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_MART))
+//     && !rbernoulli(1, 3))
+//    {
+//        sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
+//        if (sCurTVShowSlot != -1 && IsRecordMixShowAlreadySpawned(TVSHOW_SMART_SHOPPER, FALSE) != TRUE)
+//        {
+//            SortPurchasesByQuantity();
+//            if (gMartPurchaseHistory[0].quantity >= 20)
+//            {
+//                show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
+//                show->smartshopperShow.kind = TVSHOW_SMART_SHOPPER;
+//                show->smartshopperShow.active = FALSE; // NOTE: Show is not active until passed via Record Mix.
+//                show->smartshopperShow.shopLocation = gMapHeader.regionMapSectionId;
+//                for (i = 0; i < SMARTSHOPPER_NUM_ITEMS; i++)
+//                {
+//                    show->smartshopperShow.itemIds[i] = gMartPurchaseHistory[i].itemId;
+//                    show->smartshopperShow.itemAmounts[i] = gMartPurchaseHistory[i].quantity;
+//                }
+//                show->smartshopperShow.priceReduced = IsPokeNewsActive(POKENEWS_SLATEPORT);
+//                StringCopy(show->smartshopperShow.playerName, gSaveBlock2Ptr->playerName);
+//                StorePlayerIdInRecordMixShow(show);
+//                show->smartshopperShow.language = gGameLanguage;
+//            }
+//        }
+//    }
 }
 
 void PutNameRaterShowOnTheAir(void)
@@ -2665,18 +2641,18 @@ static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
     switch (newsKind)
     {
     case POKENEWS_SLATEPORT:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SLATEPORT_CITY)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SLATEPORT_CITY)
-         && gSpecialVar_LastTalked == LOCALID_SLATEPORT_ENERGY_GURU)
-            return TRUE;
+//        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SLATEPORT_CITY)
+//         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SLATEPORT_CITY)
+//         && gSpecialVar_LastTalked == LOCALID_SLATEPORT_ENERGY_GURU)
+//            return TRUE;
         return FALSE;
     case POKENEWS_LILYCOVE:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP))
-            return TRUE;
+//        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP)
+//         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP))
+//            return TRUE;
         return FALSE;
     }
-    return TRUE;
+    return FALSE;
 }
 
 static bool8 IsAddingPokeNewsDisallowed(u8 newsKind)
@@ -5545,11 +5521,11 @@ static void DoTVShowTodaysRivalTrainer(void)
         case MAPSEC_DYNAMIC:
             switch (show->rivalTrainer.mapLayoutId)
             {
-            case LAYOUT_SS_TIDAL_CORRIDOR:
-            case LAYOUT_SS_TIDAL_LOWER_DECK:
-            case LAYOUT_SS_TIDAL_ROOMS:
-                sTVShowState = 10;
-                break;
+//            case LAYOUT_SS_TIDAL_CORRIDOR:
+//            case LAYOUT_SS_TIDAL_LOWER_DECK:
+//            case LAYOUT_SS_TIDAL_ROOMS:
+//                sTVShowState = 10;
+//                break;
             default:
                 sTVShowState = 9;
                 break;
@@ -5706,11 +5682,11 @@ static void DoTVShowHoennTreasureInvestigators(void)
         {
             switch (show->treasureInvestigators.mapLayoutId)
             {
-            case LAYOUT_SS_TIDAL_CORRIDOR:
-            case LAYOUT_SS_TIDAL_LOWER_DECK:
-            case LAYOUT_SS_TIDAL_ROOMS:
-                sTVShowState = 2;
-                break;
+//            case LAYOUT_SS_TIDAL_CORRIDOR:
+//            case LAYOUT_SS_TIDAL_LOWER_DECK:
+//            case LAYOUT_SS_TIDAL_ROOMS:
+//                sTVShowState = 2;
+//                break;
             default:
                 sTVShowState = 1;
                 break;

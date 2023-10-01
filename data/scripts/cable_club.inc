@@ -923,12 +923,10 @@ CableClub_EventScript_CheckPartyUnionRoomRequirements::
 
 CableClub_EventScript_NeedTwoMonsForUnionRoom::
 	msgbox CableClub_Text_NeedTwoMonsForUnionRoom, MSGBOX_DEFAULT
-	goto EventScript_CableClub_SetVarResult0
 	end
 
 CableClub_EventScript_NoEnigmaBerryInUnionRoom::
 	msgbox CableClub_Text_NoEnigmaBerryInUnionRoom, MSGBOX_DEFAULT
-	goto EventScript_CableClub_SetVarResult0
 	end
 
 CableClub_EventScript_UnionRoomAdapterNotConnected::

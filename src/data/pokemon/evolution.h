@@ -115,9 +115,9 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_FRIENDSHIP_DAY, 0, SPECIES_ESPEON},
                                        {EVO_FRIENDSHIP_NIGHT, 0, SPECIES_UMBREON},
                                     #if P_GEN_4_POKEMON == TRUE
-                                       {EVO_SPECIFIC_MAP, MAP_PETALBURG_WOODS, SPECIES_LEAFEON},
+                                       {EVO_SPECIFIC_MAP, MAP_ROUTE103, SPECIES_LEAFEON},
                                        {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LEAFEON},
-                                       {EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_GLACEON},
+                                       {EVO_SPECIFIC_MAP, MAP_ROUTE102, SPECIES_GLACEON},
                                        {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON},
                                     #endif
                                     #if P_GEN_6_POKEMON == TRUE
@@ -466,7 +466,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_GRUBBIN]               = {{EVO_LEVEL, 20, SPECIES_CHARJABUG}},
     [SPECIES_CHARJABUG]             = {{EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_VIKAVOLT},
                                        {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VIKAVOLT}},
-    [SPECIES_CRABRAWLER]            = {{EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_CRABOMINABLE},
+    [SPECIES_CRABRAWLER]            = {{EVO_SPECIFIC_MAP, MAP_ROUTE102, SPECIES_CRABOMINABLE},
                                        {EVO_ITEM, ITEM_ICE_STONE, SPECIES_CRABOMINABLE}},
     [SPECIES_CUTIEFLY]              = {{EVO_LEVEL, 25, SPECIES_RIBOMBEE}},
     [SPECIES_ROCKRUFF]              = {{EVO_LEVEL_DAY, 25, SPECIES_LYCANROC},
