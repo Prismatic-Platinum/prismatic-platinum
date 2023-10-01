@@ -512,8 +512,8 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
+#define FLAG_PARTY_MOVES                     0x1DE // Custom Flag
+#define FLAG_RELEARN_AVAILABLE               0x1DF // Custom Flag
 #define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
@@ -1346,7 +1346,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_UNUSED_0x863                            (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_SYS_ENFORCED_HARDMODE                   (SYSTEM_FLAGS + 0x3) // Custom Flag
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)
@@ -1383,13 +1383,13 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
-#define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
+#define FLAG_SYS_DEXNAV_SEARCH                      (SYSTEM_FLAGS + 0x21)
+#define FLAG_SHINY_CREATION                         (SYSTEM_FLAGS + 0x22) // force creation of a shiny mon
+#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Debug: OW_FLAG_NO_ENCOUNTER (Do not change)
+#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Debug: OW_FLAG_NO_TRAINER_SEE (Do not change)
+#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Debug: OW_FLAG_NO_COLLISION (Do not change)
+#define FLAG_SYS_SOFT_LEVEL_CAP                     (SYSTEM_FLAGS + 0x26) // Custom Flag
+#define FLAG_SYS_HARD_LEVEL_CAP                     (SYSTEM_FLAGS + 0x27) // Custom Flag 
 
 #define FLAG_SYS_USE_FLASH                          (SYSTEM_FLAGS + 0x28)
 #define FLAG_SYS_USE_STRENGTH                       (SYSTEM_FLAGS + 0x29)
@@ -1398,8 +1398,8 @@
 #define FLAG_SYS_SAFARI_MODE                        (SYSTEM_FLAGS + 0x2C)
 #define FLAG_SYS_CRUISE_MODE                        (SYSTEM_FLAGS + 0x2D)
 
-#define FLAG_UNUSED_0x88E                           (SYSTEM_FLAGS + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x88F                           (SYSTEM_FLAGS + 0x2F) // Unused Flag
+#define FLAG_SYS_DETECTOR_MODE                      (SYSTEM_FLAGS + 0x2E) // allow player to find hidden mons
+#define FLAG_SYS_DEXNAV_GET                         (SYSTEM_FLAGS + 0x2F) // dexnav shows in start menu
 
 #define FLAG_SYS_TV_HOME                            (SYSTEM_FLAGS + 0x30)
 #define FLAG_SYS_TV_WATCH                           (SYSTEM_FLAGS + 0x31)

@@ -1341,6 +1341,7 @@ gCryTable::
 	cry Cry_Sneasler
 	cry Cry_Overqwil
 	cry Cry_Enamorus
+	cry Cry_Darkrai_D
 .else
 	cry Cry_Unown
 	cry Cry_Unown

@@ -21031,6 +21031,32 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
+    
+    //Distortion Forms
+
+    [SPECIES_DARKRAI_D] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 90,
+        .baseDefense   = 90,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 90,
+        .types = { TYPE_DARK, TYPE_GHOST},
+        .catchRate = 3,
+        .expYield = 270,
+        .evYield_Speed     = 1,
+        .evYield_SpAttack  = 2,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
+        .abilities = {ABILITY_BAD_DREAMS, ABILITY_INSOMNIA},
+        .bodyColor = BODY_COLOR_BLACK,
+        .noFlip = FALSE,
+        .flags = SPECIES_FLAG_MYTHICAL,
+    },
 #endif
 
     [SPECIES_VENUSAUR_MEGA] =

@@ -10880,5 +10880,18 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 296,
         .trainerOffset = 1,
     },
+
+    //Distortion Forms
+    [NATIONAL_DEX_DARKRAI_D] =
+    {
+        .categoryName = _("Paralysis"),
+        .height = 17,
+        .weight = 505,
+        .description = gDarkrai_DPokedexText,
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+    },
 #endif
 };

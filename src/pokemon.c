@@ -11,6 +11,7 @@
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "data.h"
+#include "dexnav.h"
 #include "event_data.h"
 #include "evolution_scene.h"
 #include "field_specials.h"
@@ -52,6 +53,7 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 #include "constants/weather.h"
+#include "wild_encounter.h"
 
 struct SpeciesItem
 {
@@ -1252,6 +1254,10 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(SNEASLER),
     SPECIES_TO_NATIONAL(OVERQWIL),
     SPECIES_TO_NATIONAL(ENAMORUS),
+    
+    //Distortion Forms
+    SPECIES_TO_NATIONAL(DARKRAI_D),
+
 #endif
 
     // Megas
@@ -2878,6 +2884,9 @@ const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_OVERQWIL - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ENAMORUS - 1]      = ANIM_V_SQUISH_AND_BOUNCE,
 
+    //Distortion Forms
+    [SPECIES_DARKRAI_D - 1]     = ANIM_GROW_VIBRATE, 
+
     //Gen 3 Forms
     [SPECIES_CASTFORM_SUNNY - 1]   = ANIM_GROW_VIBRATE,
     [SPECIES_CASTFORM_RAINY - 1]   = ANIM_SWING_CONVEX_FAST,
@@ -3097,6 +3106,10 @@ static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
     [SPECIES_SALAMENCE - 1]  = 70,
     [SPECIES_KYOGRE - 1]     = 60,
     [SPECIES_RAYQUAZA - 1]   = 60,
+
+    //Distortion Forms
+    [SPECIES_DARKRAI_D - 1]  = 15,
+
 #if P_GEN_7_POKEMON == TRUE
     [SPECIES_TAPU_FINI - 1]  = 5,
 #endif
@@ -3444,7 +3457,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         personality = Random32();
 
     // Determine original trainer ID
-    if (otIdType == OT_ID_RANDOM_NO_SHINY)
+    if (otIdType == OT_ID_RANDOM_NO_SHINY) // Pokemon cannot be shiny
     {
         u32 shinyValue;
         do
@@ -3460,10 +3473,35 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else // Player is the OT
     {
+        #ifdef ITEM_SHINY_CHARM
+        u32 shinyRolls = (CheckBagHasItem(ITEM_SHINY_CHARM, 1)) ? 3 : 1;
+        #else
+        u32 shinyRolls = 1;
+        #endif
+        u32 i;
+        
         value = gSaveBlock2Ptr->playerTrainerId[0]
               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+        for (i = 0; i < shinyRolls; i++)
+        {
+            if (Random() < SHINY_ODDS)
+                FlagSet(FLAG_SHINY_CREATION);   // use a flag bc of CreateDexNavWildMon
+        }
+
+        if (FlagGet(FLAG_SHINY_CREATION))
+        {
+            u8 nature = personality % NUM_NATURES;  // keep current nature
+            do {
+                personality = Random32();
+                personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+            } while (nature != GetNatureFromPersonality(personality));
+            
+            // clear the flag after use
+            FlagClear(FLAG_SHINY_CREATION);
+        }
 
 #if P_FLAG_FORCE_NO_SHINY != 0
         if (FlagGet(P_FLAG_FORCE_NO_SHINY))
@@ -3491,6 +3529,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                 totalRerolls += I_SHINY_CHARM_ADDITIONAL_ROLLS;
             if (LURE_STEP_COUNT != 0)
                 totalRerolls += 1;
+            if (gIsFishingEncounter)
+                totalRerolls += 1 + 2 * gChainFishingStreak;
 
             while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
             {
@@ -4185,7 +4225,7 @@ u8 GetLevelFromMonExp(struct Pokemon *mon)
     u32 exp = GetMonData(mon, MON_DATA_EXP, NULL);
     s32 level = 1;
 
-    while (level <= MAX_LEVEL && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
+    while (level <= GetPkmnLevelCap() && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
         level++;
 
     return level - 1;
@@ -4197,7 +4237,7 @@ u8 GetLevelFromBoxMonExp(struct BoxPokemon *boxMon)
     u32 exp = GetBoxMonData(boxMon, MON_DATA_EXP, NULL);
     s32 level = 1;
 
-    while (level <= MAX_LEVEL && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
+    while (level <= GetPkmnLevelCap() && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
         level++;
 
     return level - 1;
@@ -5842,7 +5882,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         case 3:
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM3_LEVEL_UP)
-             && GetMonData(mon, MON_DATA_LEVEL, NULL) != MAX_LEVEL)
+             && GetMonData(mon, MON_DATA_LEVEL, NULL) < GetPkmnLevelCap())
             {
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;
@@ -7855,7 +7895,8 @@ static s32 GetWildMonTableIdInAlteringCave(u16 species)
 
 void SetWildMonHeldItem(void)
 {
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE)))
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE))
+      && !gDexnavBattle)
     {
         u16 rnd;
         u16 species;
@@ -8160,6 +8201,9 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
         if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_SPINDA)
             gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
     }
+    
+    if (caseId == FLAG_SET_SEEN)
+        TryIncrementSpeciesSearchLevel(nationalNum);    // encountering pokemon increments its search level
 }
 
 const u8 *GetTrainerClassNameFromId(u16 trainerId)

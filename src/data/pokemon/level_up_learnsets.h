@@ -18186,6 +18186,24 @@ static const struct LevelUpMove sEnamorusLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SPRINGTIDE_STORM),
     LEVEL_UP_END
 };
+
+//Distortion Forms
+static const struct LevelUpMove sDarkrai_DLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_OMINOUS_WIND),
+    LEVEL_UP_MOVE( 1, MOVE_DISABLE),
+    LEVEL_UP_MOVE( 1, MOVE_SPACIAL_REND),
+    LEVEL_UP_MOVE(11, MOVE_QUICK_ATTACK),
+    LEVEL_UP_MOVE(20, MOVE_HYPNOSIS),
+    LEVEL_UP_MOVE(29, MOVE_FEINT_ATTACK),
+    LEVEL_UP_MOVE(38, MOVE_NIGHTMARE),
+    LEVEL_UP_MOVE(47, MOVE_DOUBLE_TEAM),
+    LEVEL_UP_MOVE(57, MOVE_HAZE),
+    LEVEL_UP_MOVE(66, MOVE_DARK_VOID),
+    LEVEL_UP_MOVE(75, MOVE_NASTY_PLOT),
+    LEVEL_UP_MOVE(84, MOVE_DREAM_EATER),
+    LEVEL_UP_MOVE(93, MOVE_DARK_PULSE),
+    LEVEL_UP_END
+};
 #endif
 
 static const struct LevelUpMove sRattataAlolanLevelUpLearnset[] = {

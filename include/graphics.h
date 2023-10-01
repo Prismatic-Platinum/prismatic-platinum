@@ -1073,6 +1073,10 @@ extern const u32 gMonFrontPic_Basculegion[];
 extern const u32 gMonFrontPic_Sneasler[];
 extern const u32 gMonFrontPic_Overqwil[];
 extern const u32 gMonFrontPic_Enamorus[];
+
+//Distortion Forms
+extern const u32 gMonFrontPic_Darkrai_D[];
+
 #endif
 extern const u32 gMonFrontPic_VenusaurMega[];
 extern const u32 gMonFrontPic_CharizardMegaX[];
@@ -2360,6 +2364,10 @@ extern const u32 gMonBackPic_Basculegion[];
 extern const u32 gMonBackPic_Sneasler[];
 extern const u32 gMonBackPic_Overqwil[];
 extern const u32 gMonBackPic_Enamorus[];
+
+//Distortion Forms
+extern const u32 gMonBackPic_Darkrai_D[];
+
 #endif
 extern const u32 gMonBackPic_VenusaurMega[];
 extern const u32 gMonBackPic_CharizardMegaX[];
@@ -3567,6 +3575,10 @@ extern const u32 gMonPalette_Basculegion[];
 extern const u32 gMonPalette_Sneasler[];
 extern const u32 gMonPalette_Overqwil[];
 extern const u32 gMonPalette_Enamorus[];
+
+//Distortion Forms
+extern const u32 gMonPalette_Darkrai_D[];
+
 #endif
 extern const u32 gMonPalette_VenusaurMega[];
 extern const u32 gMonPalette_CharizardMegaX[];
@@ -4800,6 +4812,10 @@ extern const u32 gMonShinyPalette_Basculegion[];
 extern const u32 gMonShinyPalette_Sneasler[];
 extern const u32 gMonShinyPalette_Overqwil[];
 extern const u32 gMonShinyPalette_Enamorus[];
+
+//Distortion Forms
+extern const u32 gMonShinyPalette_Darkrai_D[];
+
 #endif
 extern const u32 gMonShinyPalette_VenusaurMega[];
 extern const u32 gMonShinyPalette_CharizardMegaX[];
@@ -6027,6 +6043,11 @@ extern const u8 gMonIcon_Basculegion[];
 extern const u8 gMonIcon_Sneasler[];
 extern const u8 gMonIcon_Overqwil[];
 extern const u8 gMonIcon_Enamorus[];
+
+//Distortion Forms
+extern const u8 gMonIcon_Darkrai_D[];
+
+
 #endif
 extern const u8 gMonIcon_VenusaurMega[];
 extern const u8 gMonIcon_CharizardMegaX[];
@@ -7240,6 +7261,9 @@ extern const u8 gMonFootprint_Calyrex[];
 //extern const u8 gMonFootprint_Sneasler[];
 //extern const u8 gMonFootprint_Overqwil[];
 //extern const u8 gMonFootprint_Enamorus[];
+
+//Distortion Forms
+extern const u8 gMonFootprint_Darkrai_D[];
 #endif
 
 // trainer sprites
@@ -8927,14 +8951,14 @@ extern const u32 gItemIcon_WailmerPail[];
 extern const u32 gItemIconPalette_WailmerPail[];
 extern const u32 gItemIcon_PokeRadar[];
 extern const u32 gItemIconPalette_PokeRadar[];
+extern const u32 gItemIcon_InfiniteCandy[];
+extern const u32 gItemIconPalette_InfiniteCandy[];
 extern const u32 gItemIcon_PokeblockCase[];
 extern const u32 gItemIconPalette_PokeblockCase[];
 extern const u32 gItemIcon_SootSack[];
 extern const u32 gItemIconPalette_SootSack[];
 extern const u32 gItemIcon_PokeFlute[];
 extern const u32 gItemIconPalette_PokeFlute[];
-extern const u32 gItemIcon_FameChecker[];
-extern const u32 gItemIconPalette_FameChecker[];
 extern const u32 gItemIcon_TeachyTV[];
 extern const u32 gItemIconPalette_TeachyTV[];
 // Story Key Items

@@ -3187,6 +3187,7 @@ BattleScript_MoveMissed::
 BattleScript_EffectDarkVoid::
 .if B_DARK_VOID_FAIL >= GEN_7
 	jumpifspecies BS_ATTACKER, SPECIES_DARKRAI, BattleScript_EffectSleep
+	jumpifspecies BS_ATTACKER, SPECIES_DARKRAI_D, BattleScript_EffectSleep
 	goto BattleScript_PokemonCantUseTheMove
 .endif
 BattleScript_EffectSleep::
@@ -10374,3 +10375,11 @@ BattleScript_EffectSnow::
 	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_STRONG_WINDS, BattleScript_MysteriousAirCurrentBlowsOn
 	setsnow
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_BeguileActivates::
+	call BattleScript_AbilityPopUp
+	status2animation BS_ATTACKER, STATUS2_INFATUATION
+	printstring STRINGID_BEGUILE
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryDestinyKnotTarget
+	return

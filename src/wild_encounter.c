@@ -67,6 +67,8 @@ EWRAM_DATA static u8 sWildEncountersDisabled = 0;
 EWRAM_DATA static u32 sFeebasRngValue = 0;
 EWRAM_DATA bool8 gIsFishingEncounter = 0;
 EWRAM_DATA bool8 gIsSurfingEncounter = 0;
+EWRAM_DATA u8 gChainFishingStreak = 0;
+EWRAM_DATA static u16 sLastFishingSpecies = 0;
 
 #include "data/wild_encounters.h"
 
@@ -116,7 +118,7 @@ static u16 GetFeebasFishingSpotId(s16 targetX, s16 targetY, u8 section)
     return spotId + 1;
 }
 
-static bool8 CheckFeebas(void)
+static bool8 CheckFeebas(u8 rod)
 {
     u8 i;
     u16 feebasSpots[NUM_FEEBAS_SPOTS];
@@ -139,9 +141,20 @@ static bool8 CheckFeebas(void)
         if (y >= sRoute119WaterTileData[3 * 2 + 0] && y <= sRoute119WaterTileData[3 * 2 + 1])
             route119Section = 2;
 
-        // 50% chance of encountering Feebas (assuming this is a Feebas spot)
-        if (Random() % 100 > 49)
+        // Chance of encountering a Feebas (provided this is a Feebas spot) depends on the Rod used.
+        switch (rod)
+        {
+        case OLD_ROD:
+            if (Random() % 100 > 49)
             return FALSE;
+            break;
+        case GOOD_ROD:
+            if (Random() % 100 > 74)
+            return FALSE;
+            break;
+        case SUPER_ROD:
+            break;
+        }
 
         FeebasSeedRng(gSaveBlock1Ptr->dewfordTrends[0].rand);
 
@@ -185,7 +198,7 @@ static void FeebasSeedRng(u16 seed)
 }
 
 // LAND_WILD_COUNT
-static u8 ChooseWildMonIndex_Land(void)
+u8 ChooseWildMonIndex_Land(void)
 {
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
@@ -226,7 +239,7 @@ static u8 ChooseWildMonIndex_Land(void)
 }
 
 // ROCK_WILD_COUNT / WATER_WILD_COUNT
-static u8 ChooseWildMonIndex_WaterRock(void)
+u8 ChooseWildMonIndex_WaterRock(void)
 {
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
@@ -353,7 +366,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
     }
 }
 
-static u16 GetCurrentMapWildMonHeaderId(void)
+u16 GetCurrentMapWildMonHeaderId(void)
 {
     u16 i;
 
@@ -366,6 +379,10 @@ static u16 GetCurrentMapWildMonHeaderId(void)
         if (gWildMonHeaders[i].mapGroup == gSaveBlock1Ptr->location.mapGroup &&
             gWildMonHeaders[i].mapNum == gSaveBlock1Ptr->location.mapNum)
         {
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE101) &&
+            gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE101))
+            i += VarGet(VAR_DAYNIGHT);
+
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ALTERING_CAVE) &&
                 gSaveBlock1Ptr->location.mapNum == MAP_NUM(ALTERING_CAVE))
             {
@@ -430,7 +447,7 @@ static u8 PickWildMonNature(void)
     return Random() % NUM_NATURES;
 }
 
-static void CreateWildMon(u16 species, u8 level)
+void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm;
 
@@ -884,7 +901,7 @@ void FishingWildEncounter(u8 rod)
 {
     u16 species;
 
-    if (CheckFeebas() == TRUE)
+    if (CheckFeebas(rod) == TRUE)
     {
         u8 level = ChooseWildMonLevel(&sWildFeebas, 0, WILD_AREA_FISHING);
 
@@ -895,6 +912,17 @@ void FishingWildEncounter(u8 rod)
     {
         species = GenerateFishingWildMon(gWildMonHeaders[GetCurrentMapWildMonHeaderId()].fishingMonsInfo, rod);
     }
+    if (species == sLastFishingSpecies)
+    {
+    if (gChainFishingStreak < 20)
+        gChainFishingStreak++;
+    }
+    else
+    {
+        gChainFishingStreak = 0;    //reeling in different species resets chain fish counter
+    }
+
+    sLastFishingSpecies = species;
     IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
     SetPokemonAnglerSpecies(species);
     gIsFishingEncounter = TRUE;
@@ -1131,12 +1159,24 @@ bool8 TryDoDoubleWildBattle(void)
     return FALSE;
 }
 
-bool8 StandardWildEncounter_Debug(void)
+u8 ChooseHiddenMonIndex(void)
 {
-    u16 headerId = GetCurrentMapWildMonHeaderId();
-    if (TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0) != TRUE)
-        return FALSE;
+    #ifdef ENCOUNTER_CHANCE_HIDDEN_MONS_TOTAL
+        u8 rand = Random() % ENCOUNTER_CHANCE_HIDDEN_MONS_TOTAL;
 
-    DoStandardWildBattle_Debug();
-    return TRUE;
+        if (rand < ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_0)
+            return 0;
+        else if (rand >= ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_1)
+            return 1;
+        else
+            return 2;
+    #else
+        return 0xFF;
+    #endif
 }
+
+bool32 MapHasNoEncounterData(void)
+{
+    return (GetCurrentMapWildMonHeaderId() == HEADER_NONE);
+}
+
