@@ -3918,3 +3918,8 @@ static const u8 sBerserkGene[] = _(
     "Sharply boosts\n"
     "Attack, but causes\n"
     "lasting confusion.");
+
+static const u8 sPoketchDesc[] = _(
+    "A fancy watch kids\n"
+    "that kids are\n"
+    "raving about!");

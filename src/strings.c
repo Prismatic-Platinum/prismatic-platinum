@@ -1841,3 +1841,7 @@ const u8 gText_Nickname[] = _("Nickname");
 const u8 gText_Moves_Menu[] = _("Relearn");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
+
+const u8 gText_Time_Changer[] = _("Time Changer");
+const u8 gText_DayCare_Checker[] = _("Day-Care Checker");
+const u8 gText_Friendship_Checker[] = _("Friendship Checker");

@@ -623,4 +623,8 @@ extern const u8 EventScript_TooDark[];
 extern const u8 EventScript_MovedTooFast[];
 
 
+//Poketch
+
+extern const u8 Poketch_Startup_EventScript[];
+
 #endif // GUARD_EVENT_SCRIPTS_H

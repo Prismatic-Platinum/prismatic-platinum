@@ -3048,4 +3048,9 @@ extern const u8 gText_Moves_Menu[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
+//Poketch Apps
+extern const u8 gText_Time_Changer[];
+extern const u8 gText_DayCare_Checker[];
+extern const u8 gText_Friendship_Checker[];
+
 #endif // GUARD_STRINGS_H
