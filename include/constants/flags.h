@@ -514,10 +514,10 @@
 
 #define FLAG_PARTY_MOVES                     0x1DE // Custom Flag
 #define FLAG_RELEARN_AVAILABLE               0x1DF // Custom Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_INVERSE_BATTLE                  0x1E0 // Debug: B_FLAG_INVERSE_BATTLE (Do not change)
+#define FLAG_DOUBLE_WILD_BATTLE              0x1E1 // Debug: B_FLAG_FORCE_DOUBLE_WILD (Do not change)
+#define FLAG_BAG_DISABLED                    0x1E2 // Debug: B_FLAG_NO_BAG_USE (Do not change)
+#define FLAG_CATCHING_DISABLED               0x1E3 // Debug: B_FLAG_NO_CATCHING (Do not change)
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -1385,9 +1385,9 @@
 
 #define FLAG_SYS_DEXNAV_SEARCH                      (SYSTEM_FLAGS + 0x21)
 #define FLAG_SHINY_CREATION                         (SYSTEM_FLAGS + 0x22) // force creation of a shiny mon
-#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Debug: OW_FLAG_NO_ENCOUNTER (Do not change)
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Debug: OW_FLAG_NO_TRAINER_SEE (Do not change)
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Debug: OW_FLAG_NO_COLLISION (Do not change)
+#define FLAG_DISABLE_ENCOUNTERS                     (SYSTEM_FLAGS + 0x23) // Debug: OW_FLAG_NO_ENCOUNTER (Do not change)
+#define FLAG_DISABLE_TRAINER_SIGHT                  (SYSTEM_FLAGS + 0x24) // Debug: OW_FLAG_NO_TRAINER_SEE (Do not change)
+#define FLAG_DISABLE_COLLISION                      (SYSTEM_FLAGS + 0x25) // Debug: OW_FLAG_NO_COLLISION (Do not change)
 #define FLAG_SYS_SOFT_LEVEL_CAP                     (SYSTEM_FLAGS + 0x26) // Custom Flag
 #define FLAG_SYS_HARD_LEVEL_CAP                     (SYSTEM_FLAGS + 0x27) // Custom Flag 
 

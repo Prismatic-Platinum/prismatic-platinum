@@ -70,6 +70,7 @@ Debug_BoxFilledMessage_Text:
 	.string "Storage boxes filled!$"
 
 Debug_Script_1::
+	msgbox Text_ChangedTime_Debug, MSGBOX_SIGN
 	end
 
 Debug_Script_2::
@@ -166,5 +167,8 @@ DebugText_DaycareOnePokemon:
 	
 DebugText_DaycarePokemonNotCompatible:
 	.string "Your Pokémon at Daycare can't\nhave babies together!$"
+
+Text_ChangedTime_Debug:
+	.string "{PLAYER} changed the time.$"
 
 .endif

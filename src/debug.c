@@ -61,6 +61,7 @@
 #include "constants/species.h"
 #include "constants/weather.h"
 #include "save.h"
+#include "rtc.h"
 
 #if DEBUG_OVERWORLD_MENU == TRUE
 // *******************************
@@ -120,6 +121,7 @@ enum { // Flags and Vars
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RELEARN
 };
 enum { // Battle 0 Type
     DEBUG_BATTLE_0_MENU_ITEM_WILD,
@@ -335,6 +337,7 @@ static void DebugAction_FlagsVars_EncounterOnOff(u8 taskId);
 static void DebugAction_FlagsVars_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId);
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId);
+static void DebugAction_FlagsVars_RelearnOnOff(u8 taskId);
 
 static void Debug_InitializeBattle(u8 taskId);
 
@@ -416,7 +419,7 @@ static const u8 sDebugText_Sound[] =            _("Sound…{CLEAR_TO 110}{RIGHT_
 static const u8 sDebugText_AccessPC[] =         _("Access PC…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Cancel[] =           _("Cancel");
 // Script menu
-static const u8 sDebugText_Util_Script_1[] =               _("Poketch");
+static const u8 sDebugText_Util_Script_1[] =               _("Change Time");
 static const u8 sDebugText_Util_Script_2[] =               _("Script 2");
 static const u8 sDebugText_Util_Script_3[] =               _("Script 3");
 static const u8 sDebugText_Util_Script_4[] =               _("Script 4");
@@ -467,6 +470,7 @@ static const u8 sDebugText_FlagsVars_SwitchEncounter[] =        _("Toggle {STR_V
 static const u8 sDebugText_FlagsVars_SwitchTrainerSee[] =       _("Toggle {STR_VAR_1}TrainerSee OFF");
 static const u8 sDebugText_FlagsVars_SwitchBagUse[] =           _("Toggle {STR_VAR_1}BagUse OFF");
 static const u8 sDebugText_FlagsVars_SwitchCatching[] =         _("Toggle {STR_VAR_1}Catching OFF");
+static const u8 sDebugText_FlagsVars_SwitchRelearn[] =          _("Toggle {STR_VAR_1}Relearn OFF");
 // Battle
 static const u8 sDebugText_Battle_0_Wild[] =        _("Wild…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Battle_0_WildDouble[] =  _("Wild Double…{CLEAR_TO 110}{RIGHT_ARROW}");
@@ -637,6 +641,8 @@ static const struct ListMenuItem sDebugMenu_Items_FlagsVars[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = {sDebugText_FlagsVars_SwitchTrainerSee,   DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = {sDebugText_FlagsVars_SwitchBagUse,       DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = {sDebugText_FlagsVars_SwitchCatching,     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RELEARN]       = {sDebugText_FlagsVars_SwitchRelearn,      DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RELEARN},
+
 };
 static const struct ListMenuItem sDebugMenu_Items_Battle_0[] =
 {
@@ -770,6 +776,7 @@ static void (*const sDebugMenu_Actions_Flags[])(u8) =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = DebugAction_FlagsVars_TrainerSeeOnOff,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = DebugAction_FlagsVars_BagUseOnOff,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = DebugAction_FlagsVars_CatchingOnOff,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RELEARN]       = DebugAction_FlagsVars_RelearnOnOff,
 };
 static void (*const sDebugMenu_Actions_Give[])(u8) =
 {
@@ -1098,6 +1105,9 @@ static u8 Debug_CheckToggleFlags(u8 id)
             result = FlagGet(B_FLAG_NO_CATCHING);
             break;
     #endif
+        case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RELEARN:
+            result = FlagGet(FLAG_RELEARN_AVAILABLE);
+            break;
         default:
             result = 0xFF;
             break;
@@ -1994,10 +2004,11 @@ static void DebugAction_Util_HatchAnEgg(u8 taskId)
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
 {
-    Debug_DestroyMenu_Full(taskId);
-    LockPlayerFieldControls();
-    ScriptContext_SetupScript(Poketch_Startup_EventScript);
-    DestroyTask(taskId);
+    Overworld_ResetStateAfterDigEscRope();
+    ToggleDayNight();
+    RunOnResumeMapScript();
+    DoCurrentWeather();
+    Debug_DestroyMenu_Full_Script(taskId, Debug_Script_1);
 }
 static void DebugAction_Util_Script_2(u8 taskId)
 {
@@ -2508,6 +2519,14 @@ static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId)
         PlaySE(SE_PC_LOGIN);
     FlagToggle(B_FLAG_NO_CATCHING);
 #endif
+}
+static void DebugAction_FlagsVars_RelearnOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_RELEARN_AVAILABLE))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_RELEARN_AVAILABLE);
 }
 
 // *******************************
