@@ -790,6 +790,13 @@ static const struct MenuAction MultichoiceList_Exit[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_Poketch[] =
+{
+    {gText_Time_Changer},
+    {gText_DayCare_Checker},
+    {gText_Friendship_Checker},
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -913,7 +920,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_CHOOSE_LEVEL_CAP]           = MULTICHOICE(MultichoiceList_ChooseLevelCap),
-    [MULTI_EXPLAIN_OR_TOGGLE]           = MULTICHOICE(MultichoiceList_ExplainOrToggle),
+    [MULTI_EXPLAIN_OR_TOGGLE]          = MULTICHOICE(MultichoiceList_ExplainOrToggle),
+    [MULTI_POKETCH]                    = MULTICHOICE(MultichoiceList_Poketch), 
 };
 
 const u8 *const gStdStrings[] =

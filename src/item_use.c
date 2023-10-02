@@ -76,7 +76,9 @@ static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
 static void ItemUseOnFieldCB_Honey(u8 taskId);
+static void ItemUseCB_Poketch(u8);
 static bool32 CannotUseBagBattleItem(u16 itemId);
+
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1362,11 +1364,8 @@ void ItemUseOutOfBattle_Honey(u8 taskId)
 
 void ItemUseCB_Poketch(u8 taskId)
 {
-    Overworld_ResetStateAfterDigEscRope();
-    ToggleDayNight();
-    ScriptContext_SetupScript(EventScript_ChangedTime);
-    RunOnResumeMapScript();
-    DoCurrentWeather();
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(Poketch_Startup_EventScript);
     DestroyTask(taskId);
 }
 

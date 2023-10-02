@@ -285,6 +285,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/text/pkmn_center_nurse.inc"
 	.include "data/text/mart_clerk.inc"
 	.include "data/text/obtain_item.inc"
+	
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
@@ -489,4 +490,6 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
     .include "data/scripts/dexnav.inc"
+	.include "data/scripts/poketch.inc"
+	.include "data/text/poketch_text.inc"
     

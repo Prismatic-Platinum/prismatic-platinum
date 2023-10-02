@@ -8803,13 +8803,13 @@ const struct Item gItems[] =
 
     [ITEM_POKE_RADAR] =
     {
-        .name = _("Poké Watch"),
+        .name = _("Poké Radar"),
         .price = 0,
         .description = sPokeRadarDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Poketch,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
     [ITEM_INFINITE_CANDY] =
@@ -8867,6 +8867,16 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
+    [ITEM_POKETCH] =
+    {
+        .name = _("Pokétch"),
+        .price = 0,
+        .description = sPoketchDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Poketch,
+    },
 // Story Key Items
 
     [ITEM_SS_TICKET] =
