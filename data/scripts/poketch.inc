@@ -1,5 +1,7 @@
 Poketch_Startup_EventScript::
     lock
+    playse SE_POKENAV_ON
+    waitse
     message Poketch_Menu_Text
     waitmessage
     multichoice 17, 6, MULTI_POKETCH, FALSE
@@ -11,6 +13,7 @@ Poketch_Startup_EventScript::
 Poketch_Exit_EventScript::
     lock
     msgbox Poketch_Exit_Text, MSGBOX_DEFAULT
+    playse SE_POKENAV_OFF
     release
     end
 
@@ -43,6 +46,7 @@ Time_Change_Day_EventScript::
     waitse
     msgbox Poketch_Time_TxtDay, MSGBOX_DEFAULT
     special ToggleDayNight
+    playse SE_POKENAV_OFF
     release
     closemessage
     end
@@ -53,27 +57,33 @@ Time_Change_Night_EventScript::
     waitse
     msgbox Poketch_Time_TxtNight, MSGBOX_DEFAULT
     special ToggleDayNight
-    closemessage
+    playse SE_POKENAV_OFF
     release
+    closemessage
     end
 
 Poketch_DayCare_EventScript::
     lock
     msgbox Poketch_DCA_TxtStartup, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, YES, DCA_Check_EventScript
+    playse SE_POKENAV_OFF
 	release
 	end
 
 DCA_Check_EventScript::
     special GetDaycareMonNicknames
+    playse SE_POKENAV_CALL
+    waitse
     specialvar VAR_RESULT, GetDaycareState
     goto_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, DCA_Waiting_EventScript
     msgbox Poketch_DCA_TxtEggNone, MSGBOX_DEFAULT
+    playse SE_POKENAV_OFF
     releaseall
     end
 
 DCA_Waiting_EventScript::
     msgbox Poketch_DCA_TxtEggWaiting, MSGBOX_DEFAULT
+    playse SE_POKENAV_OFF
     releaseall
     end
 
@@ -95,31 +105,37 @@ Poketch_FriendshipChecker_EventScript::
 FCA_NONE_EventScript::
 	msgbox FCA_Txt_NONE, MSGBOX_DEFAULT
 	closemessage
+    playse SE_POKENAV_OFF
 	end
 
 FCA_1_TO_49_EventScript::
 	msgbox FCA_Txt_1_TO_49, MSGBOX_DEFAULT
 	closemessage
-	end 
+    playse SE_POKENAV_OFF
+	end
 
 FCA_50_TO_99_EventScript::
 	msgbox FCA_Txt_50_TO_99, MSGBOX_DEFAULT
 	closemessage
+    playse SE_POKENAV_OFF
 	end
 
 FCA_100_TO_149_EventScript::
 	msgbox FCA_Txt_100_TO_149, MSGBOX_DEFAULT
 	closemessage
+    playse SE_POKENAV_OFF
 	end
 
 FCA_150_TO_199_EventScript::
 	msgbox FCA_Txt_150_TO_199, MSGBOX_DEFAULT
 	closemessage
+    playse SE_POKENAV_OFF
 	end
 
 FCA_200_TO_254_EventScript::
 	msgbox FCA_Txt_200_TO_254, MSGBOX_DEFAULT
 	closemessage
+    playse SE_POKENAV_OFF
 	end
 
 FCA_MAX_EventScript::
@@ -127,4 +143,5 @@ FCA_MAX_EventScript::
 	waitse
 	msgbox FCA_Txt_MAX, MSGBOX_DEFAULT
 	closemessage
+    playse SE_POKENAV_OFF
 	end

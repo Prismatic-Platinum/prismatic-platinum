@@ -1,5 +1,6 @@
 @Menu
 Poketch_Menu_Text::
+	.string "Switching on...\p"
     .string "Which app do you want to launch?$"
 
 Poketch_Exit_Text::
