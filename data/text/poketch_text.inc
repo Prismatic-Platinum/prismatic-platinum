@@ -17,11 +17,11 @@ Poketch_TimeChanger_TxtStartup_Night::
 
 Poketch_Time_TxtDay::
     .string "Now playing Daylight Ditty.\p"
-    .string "Daytime Pokemon will now show up.$"
+    .string "Daytime Pokémon will now show up.$"
 
 Poketch_Time_TxtNight::
     .string "Now playing Starlight Sonata.\p"
-    .string "Nighttime Pokemon will now show up.$"
+    .string "Nighttime Pokémon will now show up.$"
 
 @Day-Care Checker
 Poketch_DCA_TxtStartup::

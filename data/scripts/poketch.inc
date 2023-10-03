@@ -46,6 +46,8 @@ Time_Change_Day_EventScript::
     waitse
     msgbox Poketch_Time_TxtDay, MSGBOX_DEFAULT
     special ToggleDayNight
+    special RunOnResumeMapScript
+    special DoCurrentWeather
     playse SE_POKENAV_OFF
     release
     closemessage
@@ -57,6 +59,8 @@ Time_Change_Night_EventScript::
     waitse
     msgbox Poketch_Time_TxtNight, MSGBOX_DEFAULT
     special ToggleDayNight
+    special RunOnResumeMapScript
+    special DoCurrentWeather
     playse SE_POKENAV_OFF
     release
     closemessage
@@ -139,8 +143,10 @@ FCA_200_TO_254_EventScript::
 	end
 
 FCA_MAX_EventScript::
-	playse MUS_OBTAIN_BADGE
-	waitse
+	playfanfare MUS_OBTAIN_BADGE
+	waitfanfare
+    playmoncry SPECIES_ROTOM
+    waitmoncry
 	msgbox FCA_Txt_MAX, MSGBOX_DEFAULT
 	closemessage
     playse SE_POKENAV_OFF

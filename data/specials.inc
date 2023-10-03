@@ -538,3 +538,5 @@ gSpecials::
 	def_special TrySpecialOverworldEvo
 	def_special GetDayOrNight
 	def_special ToggleDayNight
+	def_special RunOnResumeMapScript;
+	def_special DoCurrentWeather;
