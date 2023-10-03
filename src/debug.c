@@ -2004,8 +2004,7 @@ static void DebugAction_Util_HatchAnEgg(u8 taskId)
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
 {
-    ScriptContext_SetupScript(Poketch_Startup_EventScript);
-    Debug_DestroyMenu_Full_Script(taskId, Debug_Script_1);
+    Debug_DestroyMenu_Full_Script(taskId, Poketch_Startup_EventScript);
 }
 static void DebugAction_Util_Script_2(u8 taskId)
 {
