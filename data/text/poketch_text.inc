@@ -1,5 +1,6 @@
 @Menu
 Poketch_Menu_Text::
+	.string "Switching on...\p"
     .string "Which app do you want to launch?$"
 
 Poketch_Exit_Text::
@@ -16,11 +17,11 @@ Poketch_TimeChanger_TxtStartup_Night::
 
 Poketch_Time_TxtDay::
     .string "Now playing Daylight Ditty.\p"
-    .string "Daytime Pokemon will now show up.$"
+    .string "Daytime Pokémon will now show up.$"
 
 Poketch_Time_TxtNight::
     .string "Now playing Starlight Sonata.\p"
-    .string "Nighttime Pokemon will now show up.$"
+    .string "Nighttime Pokémon will now show up.$"
 
 @Day-Care Checker
 Poketch_DCA_TxtStartup::

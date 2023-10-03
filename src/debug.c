@@ -419,7 +419,7 @@ static const u8 sDebugText_Sound[] =            _("Sound…{CLEAR_TO 110}{RIGHT_
 static const u8 sDebugText_AccessPC[] =         _("Access PC…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Cancel[] =           _("Cancel");
 // Script menu
-static const u8 sDebugText_Util_Script_1[] =               _("Change Time");
+static const u8 sDebugText_Util_Script_1[] =               _("Poketch");
 static const u8 sDebugText_Util_Script_2[] =               _("Script 2");
 static const u8 sDebugText_Util_Script_3[] =               _("Script 3");
 static const u8 sDebugText_Util_Script_4[] =               _("Script 4");
@@ -2004,11 +2004,7 @@ static void DebugAction_Util_HatchAnEgg(u8 taskId)
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
 {
-    Overworld_ResetStateAfterDigEscRope();
-    ToggleDayNight();
-    RunOnResumeMapScript();
-    DoCurrentWeather();
-    Debug_DestroyMenu_Full_Script(taskId, Debug_Script_1);
+    Debug_DestroyMenu_Full_Script(taskId, Poketch_Startup_EventScript);
 }
 static void DebugAction_Util_Script_2(u8 taskId)
 {
