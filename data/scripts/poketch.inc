@@ -145,7 +145,7 @@ FCA_200_TO_254_EventScript::
 FCA_MAX_EventScript::
 	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare
-    playmoncry SPECIES_ROTOM
+    playmoncry SPECIES_ROTOM, CRY_MODE_NORMAL
     waitmoncry
 	msgbox FCA_Txt_MAX, MSGBOX_DEFAULT
 	closemessage
