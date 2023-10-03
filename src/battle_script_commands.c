@@ -62,6 +62,7 @@
 #include "battle_util.h"
 #include "constants/pokemon.h"
 #include "config/battle.h"
+#include "tv.h"
 
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
@@ -4158,6 +4159,17 @@ int GetPkmnLevelCap(void)
         return sLevelCaps2[numFlagsSet];
 
     return MAX_LEVEL;
+}
+
+void SetLevelCapStringVar(void)
+{
+    int levelCap = GetPkmnLevelCap();
+    u8 levelCapStr[4];
+
+    // Convert the integer to a string
+    ConvertIntToDecimalStringN(levelCapStr, levelCap, STR_CONV_MODE_LEFT_ALIGN, CountDigits(levelCap));
+
+    StringCopy(gStringVar2, levelCapStr);
 }
 
 FEATURE_FLAG_ASSERT(I_EXP_SHARE_FLAG, YouNeedToSetTheExpShareFlagToAnUnusedFlag);

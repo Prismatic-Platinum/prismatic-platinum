@@ -1,6 +1,20 @@
 gText_ImTheBattleMaster::
     .string "Greetings…\p"
-    .string "I am the Battle Master.\p"
+    .string "I am the Battle Master.$"
+
+gText_NoEffectiveCap::
+    .string "There is no limit on your\n"
+    .string "experience gains currently.$"
+
+gText_EffectiveHardCap::
+    .string "Your experience has a hard cap\n"
+    .string "of “{STR_VAR_2}” currently.$"
+
+gText_EffectiveSoftCap::
+    .string "Your experience has a soft cap\n"
+    .string "up to “{STR_VAR_2}” currently.$"
+
+gText_WouldYouLikeMeToChange::
     .string "Would you like me to change\n"
     .string "your battle experience?$"
 

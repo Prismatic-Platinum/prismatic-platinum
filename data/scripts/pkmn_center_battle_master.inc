@@ -4,6 +4,34 @@ Common_EventScript_PkmnCenterBattleMaster::
     goto_if_set FLAG_SYS_ENFORCED_HARDMODE, Common_EventScript_PkmnCenterBattleMaster_OhChallengeCard
 	message gText_ImTheBattleMaster
 	waitmessage
+    waitbuttonpress
+    goto_if_set FLAG_SYS_HARD_LEVEL_CAP, Common_EventScript_PkmnCenterBattleMaster_EffectiveHardCap
+    goto_if_set FLAG_SYS_SOFT_LEVEL_CAP, Common_EventScript_PkmnCenterBattleMaster_EffectiveSoftCap
+    message gText_NoEffectiveCap
+    waitmessage
+    waitbuttonpress
+    goto Common_EventScript_PkmnCenterBattleMaster_WouldYouLikeToChange
+    end
+
+Common_EventScript_PkmnCenterBattleMaster_EffectiveHardCap::
+    special SetLevelCapStringVar
+    message gText_EffectiveHardCap
+    waitmessage
+    waitbuttonpress
+    goto Common_EventScript_PkmnCenterBattleMaster_WouldYouLikeToChange
+    end
+
+Common_EventScript_PkmnCenterBattleMaster_EffectiveSoftCap::
+    special SetLevelCapStringVar
+    message gText_EffectiveSoftCap
+    waitmessage
+    waitbuttonpress
+    goto Common_EventScript_PkmnCenterBattleMaster_WouldYouLikeToChange
+    end 
+
+Common_EventScript_PkmnCenterBattleMaster_WouldYouLikeToChange::
+    message gText_WouldYouLikeMeToChange
+    waitmessage
 	multichoice 16, 6, MULTI_CHOOSE_LEVEL_CAP, FALSE
 	switch VAR_RESULT
 	case 0, Common_EventScript_PkmnCenterBattleMaster_SoftLevelCaps
