@@ -152,63 +152,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_KRICKETOT"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_STARLY"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_BIDOOF"
               },
               {
                 "min_level": 3,
-                "max_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_RATTATA_ALOLAN"
               },
               {
                 "min_level": 3,
-                "max_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_PURRLOIN"
               },
               {
                 "min_level": 3,
-                "max_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_SHINX"
               },
               {
                 "min_level": 3,
-                "max_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_BUDEW"
               },
               {
                 "min_level": 3,
-                "max_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_WEEDLE"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_PATRAT"
               },
               {
-                "min_level": 2,
-                "max_level": 2,
+                "min_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_BLIPBUG"
               },
               {
                 "min_level": 3,
-                "max_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_GRUBBIN"
               },
               {
                 "min_level": 3,
-                "max_level": 3,
+                "max_level": 5,
                 "species": "SPECIES_ROOKIDEE"
               }
             ]
