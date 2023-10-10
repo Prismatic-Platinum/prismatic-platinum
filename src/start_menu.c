@@ -30,6 +30,7 @@
 #include "party_menu.h"
 #include "pokedex.h"
 #include "pokenav.h"
+#include "rtc.h"
 #include "safari_zone.h"
 #include "save.h"
 #include "scanline_effect.h"
@@ -84,6 +85,7 @@ bool8 (*gMenuCallback)(void);
 // EWRAM
 EWRAM_DATA static u8 sSafariBallsWindowId = 0;
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
+EWRAM_DATA static u8 sCurrentTimeWindowId = 0;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
 EWRAM_DATA static u8 sNumStartMenuActions = 0;
 EWRAM_DATA static u8 sCurrentStartMenuActions[9] = {0};
@@ -175,6 +177,16 @@ static const struct WindowTemplate sWindowTemplate_PyramidFloor = {
     .baseBlock = 0x8
 };
 
+static const struct WindowTemplate sWindowTemplate_CurrentTime = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 6,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = 0x8
+};
+
 static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
     .bg = 0,
     .tilemapLeft = 1,
@@ -255,6 +267,7 @@ static void BuildBattlePyramidStartMenu(void);
 static void BuildMultiPartnerRoomStartMenu(void);
 static void ShowSafariBallsWindow(void);
 static void ShowPyramidFloorWindow(void);
+static void ShowCurrentTimeWindow(void);
 static void RemoveExtraStartMenuWindows(void);
 static bool32 PrintStartMenuActions(s8 *pIndex, u32 count);
 static bool32 InitStartMenuStep(void);
@@ -452,6 +465,33 @@ static void ShowPyramidFloorWindow(void)
     CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
 }
 
+static void ShowCurrentTimeWindow(void)
+{
+    u8 currentHour;
+    const u8 sColor_Blue[] = _("{COLOR LIGHT_BLUE}{SHADOW LIGHT_BLUE}");
+    const u8 sColor_Yellow[] = _("{COLOR LIGHT_RED}{SHADOW LIGHT_RED}");
+    RtcCalcLocalTime();
+    if (gLocalTime.hours >= 12) 
+        currentHour = (gLocalTime.hours - 12);
+    else 
+        currentHour = gLocalTime.hours;
+    sCurrentTimeWindowId = AddWindow(&sWindowTemplate_CurrentTime);
+    PutWindowTilemap(sCurrentTimeWindowId);
+    DrawStdWindowFrame(sCurrentTimeWindowId, FALSE);
+    ConvertIntToDecimalStringN(gStringVar1, currentHour, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    if (gLocalTime.hours >= 8 && gLocalTime.hours <=19)
+    StringCopy(gStringVar3, sColor_Yellow);
+    else
+    StringCopy(gStringVar3, sColor_Blue);
+    if (gLocalTime.hours >= 12)
+    StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM);
+    else
+    StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);
+    AddTextPrinterParameterized(sCurrentTimeWindowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sCurrentTimeWindowId, COPYWIN_GFX);
+}
+
 static void RemoveExtraStartMenuWindows(void)
 {
     if (GetSafariZoneFlag())
@@ -464,6 +504,11 @@ static void RemoveExtraStartMenuWindows(void)
     {
         ClearStdWindowAndFrameToTransparent(sBattlePyramidFloorWindowId, FALSE);
         RemoveWindow(sBattlePyramidFloorWindowId);
+    }
+    else if (FlagGet(FLAG_SET_WALL_CLOCK))
+    {
+    ClearStdWindowAndFrameToTransparent(sCurrentTimeWindowId, FALSE);
+    RemoveWindow(sCurrentTimeWindowId);
     }
 }
 
@@ -522,6 +567,8 @@ static bool32 InitStartMenuStep(void)
             ShowSafariBallsWindow();
         if (InBattlePyramid())
             ShowPyramidFloorWindow();
+        else if (FlagGet(FLAG_SET_WALL_CLOCK))
+            ShowCurrentTimeWindow();
         sInitStartMenuData[0]++;
         break;
     case 4:
