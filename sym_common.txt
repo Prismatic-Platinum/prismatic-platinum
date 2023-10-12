@@ -53,7 +53,8 @@ gReservedSpritePaletteCount:
 	.include "tv.o"
 	.include "mauville_old_man.o"
 	.include "image_processing_effects.o"
-
+	.include "sound_check_menu.o"
+	
 	.space 0x4
 
 	.include "contest_painting.o"

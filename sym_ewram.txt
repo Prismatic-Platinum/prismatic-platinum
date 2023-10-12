@@ -151,3 +151,4 @@
 	.include "src/debug.o"
 	.include "src/dexnav.o"
 	.include "src/battle_controller_player.o"
+	.include "src/sound_check_menu.o"
