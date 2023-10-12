@@ -468,8 +468,8 @@ static void ShowPyramidFloorWindow(void)
 static void ShowCurrentTimeWindow(void)
 {
     u8 currentHour;
-    const u8 sColor_Blue[] = _("{COLOR LIGHT_BLUE}{SHADOW LIGHT_BLUE}");
-    const u8 sColor_Yellow[] = _("{COLOR LIGHT_RED}{SHADOW LIGHT_RED}");
+    const u8 sColor_Blue[] = _("{COLOR BLUE}{SHADOW LIGHT_BLUE}");
+    const u8 sColor_Yellow[] = _("{COLOR RED}{SHADOW LIGHT_RED}");
     RtcCalcLocalTime();
     if (gLocalTime.hours >= 12) 
         currentHour = (gLocalTime.hours - 12);
