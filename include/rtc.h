@@ -46,5 +46,6 @@ void CalcTimeDifference(struct Time *result, struct Time *t1, struct Time *t2);
 u32 RtcGetMinuteCount(void);
 u32 RtcGetLocalDayCount(void);
 void ToggleDayNight(void);
+void TryReturnTimeOffset(void);
 
 #endif // GUARD_RTC_UTIL_H
