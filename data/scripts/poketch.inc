@@ -47,9 +47,11 @@ Time_Change_Day_EventScript::
     msgbox Poketch_Time_TxtDay, MSGBOX_DEFAULT
     special ToggleDayNight
     special RunOnResumeMapScript
+    fadedefaultbgm
     special DoCurrentWeather
+    savebgm MUS_DUMMY
+	fadedefaultbgm
     playse SE_POKENAV_OFF
-    release
     closemessage
     end
     
@@ -61,6 +63,8 @@ Time_Change_Night_EventScript::
     special ToggleDayNight
     special RunOnResumeMapScript
     special DoCurrentWeather
+    savebgm MUS_DUMMY
+	fadedefaultbgm
     playse SE_POKENAV_OFF
     release
     closemessage
