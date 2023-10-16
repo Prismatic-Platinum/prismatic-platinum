@@ -12,6 +12,7 @@
 #include "trainer_hill.h"
 #include "link.h"
 #include "constants/game_stat.h"
+#include "rtc.h"
 
 static u16 CalculateChecksum(void *, u16);
 static bool8 ReadFlashSector(u8, struct SaveSector *);
@@ -895,6 +896,7 @@ u8 LoadGameSave(u8 saveType)
             status = TryLoadSaveSector(SECTOR_ID_HOF_2, &gDecompressionBuffer[SECTOR_DATA_SIZE], SECTOR_DATA_SIZE);
         break;
     }
+    TryReturnTimeOffset();
 
     return status;
 }
