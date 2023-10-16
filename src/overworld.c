@@ -43,6 +43,7 @@
 #include "random.h"
 #include "roamer.h"
 #include "rotating_gate.h"
+#include "rtc.h"
 #include "safari_zone.h"
 #include "save.h"
 #include "save_location.h"
@@ -181,6 +182,7 @@ static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
 // adjusted key code, effectively intercepting the input before anything
 // can process it.
 static u16 (*sPlayerKeyInterceptCallback)(u32);
+static u16 GetNightMusicIfAvaliable(u16 dayMusic);
 static bool8 sReceivingFromLink;
 static u8 sRfuKeepAliveTimer;
 
@@ -1105,8 +1107,41 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
+u16 GetNightMusicIfAvailable(u16 dayMusic) {
+    switch (dayMusic) {
+        case MUS_DP_TWINLEAF_DAY: return MUS_DP_TWINLEAF_NIGHT;
+        case MUS_DP_SANDGEM_DAY: return MUS_DP_SANDGEM_NIGHT;
+        case MUS_DP_FLOAROMA_DAY: return MUS_DP_FLOAROMA_NIGHT;
+        case MUS_DP_SOLACEON_DAY: return MUS_DP_SOLACEON_NIGHT;
+        case MUS_DP_ROUTE225_DAY: return MUS_DP_ROUTE225_NIGHT;
+        case MUS_DP_VALOR_LAKEFRONT_DAY: return MUS_DP_VALOR_LAKEFRONT_NIGHT;
+        case MUS_DP_JUBILIFE_DAY: return MUS_DP_JUBILIFE_NIGHT;
+        case MUS_DP_CANALAVE_DAY: return MUS_DP_CANALAVE_NIGHT;
+        case MUS_DP_OREBURGH_DAY: return MUS_DP_OREBURGH_NIGHT;
+        case MUS_DP_ETERNA_DAY: return MUS_DP_ETERNA_NIGHT;
+        case MUS_DP_HEARTHOME_DAY: return MUS_DP_HEARTHOME_NIGHT;
+        case MUS_DP_VEILSTONE_DAY: return MUS_DP_VEILSTONE_NIGHT;
+        case MUS_DP_SUNYSHORE_DAY: return MUS_DP_SUNYSHORE_NIGHT;
+        case MUS_DP_SNOWPOINT_DAY: return MUS_DP_SNOWPOINT_NIGHT;
+        case MUS_DP_POKEMON_LEAGUE_DAY: return MUS_DP_POKEMON_LEAGUE_NIGHT;
+        case MUS_DP_FIGHT_AREA_DAY: return MUS_DP_FIGHT_AREA_NIGHT;
+        case MUS_DP_ROUTE201_DAY: return MUS_DP_ROUTE201_NIGHT;
+        case MUS_DP_ROUTE203_DAY: return MUS_DP_ROUTE203_NIGHT;
+        case MUS_DP_ROUTE205_DAY: return MUS_DP_ROUTE205_NIGHT;
+        case MUS_DP_ROUTE206_DAY: return MUS_DP_ROUTE206_NIGHT;
+        case MUS_DP_ROUTE209_DAY: return MUS_DP_ROUTE209_NIGHT;
+        case MUS_DP_ROUTE210_DAY: return MUS_DP_ROUTE210_NIGHT;
+        case MUS_DP_ROUTE216_DAY: return MUS_DP_ROUTE216_NIGHT;
+        case MUS_DP_ROUTE228_DAY: return MUS_DP_ROUTE228_NIGHT;
+        case MUS_DP_POKE_CENTER_DAY: return MUS_DP_POKE_CENTER_NIGHT;
+        default: return dayMusic;
+    }
+}
+
 u16 GetLocationMusic(struct WarpData *warp)
 {
+    u16 dayMusic;
+
     if (NoMusicInSotopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
@@ -1115,6 +1150,11 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
+    RtcCalcLocalTime();
+    if (gLocalTime.hours < 8 || gLocalTime.hours > 19) {
+        u16 dayMusic = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
+        return GetNightMusicIfAvailable(dayMusic);
+    }
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
