@@ -17,13 +17,13 @@ git clone https://github.com/Prismatic-Platinum/prismatic-platinum
 
 > Cloning our base should also link your local repo to the remote repo and keep you up to date with our changes.
 
-3. Make sure you are in the root directory and can see our pokeemerald file (`ls` to see files in the current directory). Then, run the following:
+3. Make sure you are in the root directory and can see our prismatic-platinum file (`ls` to see files in the current directory). Then, run the following:
 
 ```
 git clone https://github.com/pret/agbcc
 cd agbcc
 ./build.sh
-./install.sh ../pokeemerald
+./install.sh ../prismatic-platinum
 ```
 
 ## VSCode and Extensions
