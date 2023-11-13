@@ -1978,7 +1978,7 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
                 #if B_AFFECTION_MECHANICS == TRUE
                     + 2 * (GetBattlerFriendshipScore(battlerAtk) >= FRIENDSHIP_200_TO_254)
                 #endif
-                    + 2 * (abilityAtk == ABILITY_SPEEDSTER)
+                    + 2 * (abilityAtk == ABILITY_POTSHOT)
                     + (abilityAtk == ABILITY_SUPER_LUCK);
                     
         // Record ability only if move had at least +3 chance to get a crit
