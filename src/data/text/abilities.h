@@ -290,6 +290,7 @@ static const u8 sArmorTailDescription[] = _("Protects from priority.");
 static const u8 sEarthEaterDescription[] = _("Eats ground to heal HP.");
 static const u8 sMyceliumMightDescription[] = _("Status moves never fail.");
 static const u8 sBeguileDescription[] = _("Inflicts infatuation regardless of gender.");
+static const u8 sSpeedsterDescription[] = _("Critical Hits land often.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -594,6 +595,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_EARTH_EATER] = _("Earth Eater"),
     [ABILITY_MYCELIUM_MIGHT] = _("Mycelium Might"),
     [ABILITY_BEGUILE] = _("Beguile"),
+    [ABILITY_SPEEDSTER] = _("Speedster"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -898,6 +900,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_EARTH_EATER] = _("Earth Eater"),
     [ABILITY_MYCELIUM_MIGHT] = _("MceliumMight"),
     [ABILITY_BEGUILE] = _("Beguile"),
+    [ABILITY_SPEEDSTER] = _("Speedster"),
 };
 #endif
 
@@ -1203,4 +1206,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_EARTH_EATER] = sEarthEaterDescription,
     [ABILITY_MYCELIUM_MIGHT] = sMyceliumMightDescription,
     [ABILITY_BEGUILE] = sBeguileDescription,
+    [ABILITY_SPEEDSTER] = sSpeedsterDescription,
 };
