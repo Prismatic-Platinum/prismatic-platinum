@@ -5346,7 +5346,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gBattlescriptCurrInstr = BattleScript_TargetsStatWasMaxedOut;
                 effect++;
             }
-            break;
+            break;    
         case ABILITY_COLOR_CHANGE:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
              && move != MOVE_STRUGGLE
@@ -5400,7 +5400,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gBattlescriptCurrInstr = BattleScript_RoughSkinActivates;
                 effect++;
             }
-            break;
+            break;    
         case ABILITY_AFTERMATH:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
              && gBattleMons[gBattlerTarget].hp == 0

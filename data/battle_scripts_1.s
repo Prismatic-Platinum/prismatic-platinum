@@ -3395,6 +3395,7 @@ BattleScript_ExplosionDmgRet:
 	critcalc
 	damagecalc
 	adjustdamage
+	photongeysercheck BS_ATTACKER
 	accuracycheck BattleScript_ExplosionMissedRet, ACC_CURR_MOVE
 	effectivenesssound
 	hitanimation BS_TARGET
