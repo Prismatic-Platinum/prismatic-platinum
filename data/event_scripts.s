@@ -493,3 +493,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/poketch.inc"
 	.include "data/text/poketch_text.inc"
     
+
+	.include "data/maps/TwinleafTown/scripts.inc"
+
+	.include "data/maps/Route201/scripts.inc"

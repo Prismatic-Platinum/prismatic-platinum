@@ -12,6 +12,8 @@
 #define MAP_ROUTE101        (3 | (0 << 8))
 #define MAP_ROUTE102        (4 | (0 << 8))
 #define MAP_ROUTE103        (5 | (0 << 8))
+#define MAP_TWINLEAF_TOWN   (6 | (0 << 8))
+#define MAP_ROUTE201        (7 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
