@@ -214,6 +214,7 @@
 #define METATILE_General_Door_Contest          0x1DB
 #define METATILE_General_Door_Gym              0x1CD
 #define METATILE_General_Door_PokeCenter       0x061
+#define METATILE_General_Door_PokeMart         0x041
 #define METATILE_General_Grass                 0x001
 #define METATILE_General_Grass_TreeLeft        0x1CE
 #define METATILE_General_Grass_TreeRight       0x1CF
@@ -234,7 +235,6 @@
 #define METATILE_General_SandPit_Center        0x121
 #define METATILE_General_SecretBase_TreeLeft   0x026
 #define METATILE_General_SecretBase_TreeRight  0x027
-#define METATILE_General_SecretBase_VineLeft   0x036
 #define METATILE_General_SecretBase_VineRight  0x037
 #define METATILE_General_TallGrass             0x00D
 #define METATILE_General_TallGrass_TreeLeft    0x1C6
