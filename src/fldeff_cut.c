@@ -385,9 +385,9 @@ static void SetCutGrassMetatile(s16 x, s16 y)
     case METATILE_Fallarbor_AshGrass:
         MapGridSetMetatileIdAt(x, y, METATILE_Fallarbor_AshField);
         break;
-    case METATILE_General_TallGrass_TreeUp:
-        MapGridSetMetatileIdAt(x, y, METATILE_General_Grass_TreeUp);
-        break;
+//    case METATILE_General_TallGrass_TreeUp:
+//        MapGridSetMetatileIdAt(x, y, METATILE_General_Grass_TreeUp);
+//        break;
     }
 }
 

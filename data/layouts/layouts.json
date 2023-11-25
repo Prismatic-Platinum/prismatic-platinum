@@ -960,6 +960,36 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/map.bin"
+    },
+    {
+      "id": "LAYOUT_TWINLEAF_TOWN",
+      "name": "TwinleafTown_Layout",
+      "width": 22,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TwinleafTown/border.bin",
+      "blockdata_filepath": "data/layouts/TwinleafTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE201",
+      "name": "Route201_Layout",
+      "width": 82,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route201/border.bin",
+      "blockdata_filepath": "data/layouts/Route201/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_VERITY",
+      "name": "LakeVerity_Layout",
+      "width": 44,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/LakeVerity/border.bin",
+      "blockdata_filepath": "data/layouts/LakeVerity/map.bin"
     }
   ]
 }
