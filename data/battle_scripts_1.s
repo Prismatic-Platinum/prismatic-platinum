@@ -3404,7 +3404,9 @@ BattleScript_ExplosionDmgRet:
 	critcalc
 	damagecalc
 	adjustdamage
+#ifdef EXPLOSION_CHANGES
 	photongeysercheck BS_ATTACKER
+#endif
 	accuracycheck BattleScript_ExplosionMissedRet, ACC_CURR_MOVE
 	effectivenesssound
 	hitanimation BS_TARGET

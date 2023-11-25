@@ -53,22 +53,24 @@ SINGLE_BATTLE_TEST("Download raises Sp.Attack if enemy has lower Sp. Def than De
     }
 }
 
+#ifdef EXPLOSION_CHANGES
 SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet", s16 damagePhysical, s16 damageSpecial)
 {
     u32 ability;
     PARAMETRIZE { ability = ABILITY_TRACE; }
     PARAMETRIZE { ability = ABILITY_DOWNLOAD; }
     GIVEN {
+        ASSUME(gBattleMoves[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
         PLAYER(SPECIES_WOBBUFFET) { Speed(100); }
         PLAYER(SPECIES_PORYGON) { Ability(ability); Defense(400); SpDefense(300); Speed(300); Attack(100); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
         OPPONENT(SPECIES_PORYGON2) { Ability(ability); Defense(100); SpDefense(200); Speed(200); }
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); SEND_OUT(player, 1); SEND_OUT(opponent, 1); }
+        TURN { MOVE(player, MOVE_EXPLOSION); SEND_OUT(player, 1); SEND_OUT(opponent, 1); }
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_TRI_ATTACK); }
     } SCENE {
         HP_BAR(player, hp: 0);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, player);
         // Everyone faints.
 
         MESSAGE("Go! Porygon!");
@@ -92,3 +94,4 @@ SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet
         EXPECT_MUL_EQ(results[0].damageSpecial, Q_4_12(1.5), results[1].damageSpecial);
     }
 }
+#endif
