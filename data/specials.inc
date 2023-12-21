@@ -541,3 +541,9 @@ gSpecials::
 	def_special ToggleDayNight
 	def_special RunOnResumeMapScript;
 	def_special DoCurrentWeather;
+	def_special GetNumberSprayStrength
+	def_special GetSprayId
+	def_special GetLastUsedSprayType
+	def_special TrySkyBattle
+	def_special VsSeekerResetObjectMovementAfterChargeComplete
+	def_special VsSeekerFreezeObjectsAfterChargeComplete

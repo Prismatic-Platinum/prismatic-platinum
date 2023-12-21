@@ -63,7 +63,7 @@ SINGLE_BATTLE_TEST("Roost fails if the user is under the effects of Heal Block")
 
 SINGLE_BATTLE_TEST("Roost recovers 50% of the user's Max HP")
 {
-    s16 hp;
+    u16 hp;
 
     KNOWN_FAILING; // All healing is currently rounded down
     GIVEN {
@@ -131,7 +131,6 @@ SINGLE_BATTLE_TEST("Roost, if used by a Flying/Flying type, treats the user as a
     PARAMETRIZE{ damagingMove = MOVE_DISARMING_VOICE; }
 
     GIVEN {
-        ASSUME(P_GEN_5_POKEMON == TRUE);
         ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[0] == TYPE_FLYING);
         ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_TORNADUS) { HP(50); MaxHP(100); }
@@ -416,7 +415,6 @@ SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Magnet Rise
 
 SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Telekinesis")
 {
-    KNOWN_FAILING; // Telekinesis currently says the pokemon was identified
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);
