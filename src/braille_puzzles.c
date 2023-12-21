@@ -283,7 +283,7 @@ bool8 FldEff_UsePuzzleEffect(void)
 // step on every space on the perimeter of the cave (and only those spaces) then return to the back wall.
 bool8 ShouldDoBrailleRegicePuzzle(void)
 {
-    u8 i;
+//    u8 i;
 
 //    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLAND_CAVE)
 //        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ISLAND_CAVE))
@@ -340,5 +340,5 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
         FlagClear(FLAG_TEMP_REGICE_PUZZLE_STARTED);
 //    }
 
-    return FALSE;
+//    return FALSE;
 }

@@ -95,7 +95,7 @@ struct
 static void FindMapsWithMon(u16);
 static void BuildAreaGlowTilemap(void);
 static void SetAreaHasMon(u16, u16);
-static void SetSpecialMapHasMon(u16, u16);
+static void UNUSED SetSpecialMapHasMon(u16, u16);
 static u16 GetRegionMapSectionId(u8, u8);
 static bool8 MapHasSpecies(const struct WildPokemonHeader *, u16);
 static bool8 MonListHasSpecies(const struct WildPokemonInfo *, u16, u16);
@@ -325,7 +325,7 @@ static void SetAreaHasMon(u16 mapGroup, u16 mapNum)
     }
 }
 
-static void SetSpecialMapHasMon(u16 mapGroup, u16 mapNum)
+static void UNUSED SetSpecialMapHasMon(u16 mapGroup, u16 mapNum)
 {
     int i;
 

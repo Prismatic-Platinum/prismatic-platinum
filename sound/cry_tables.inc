@@ -2157,9 +2157,10 @@ gCryTable::
 .if P_FAMILY_ENAMORUS == TRUE
 	cry Cry_EnamorusIncarnate
 	cry Cry_EnamorusTherian
+.endif @ P_FAMILY_ENAMORUS
 .if P_FAMILY_DARKRAI_D == TRUE
 	cry Cry_Darkrai_D
-.endif @ P_FAMILY_ENAMORUS
+.endif @ P_FAMILY_DARKRAI_D
 .if P_FAMILY_SPRIGATITO == TRUE
 	cry Cry_Sprigatito
 	cry Cry_Floragato

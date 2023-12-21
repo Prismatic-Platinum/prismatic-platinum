@@ -317,7 +317,7 @@ bool32 CountSSTidalStep(u16 delta)
 
 u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
 {
-    u16 *varCruiseStepCount = GetVarPointer(VAR_CRUISE_STEP_COUNT);
+//    u16 *varCruiseStepCount = GetVarPointer(VAR_CRUISE_STEP_COUNT);
 //    switch (*GetVarPointer(VAR_SS_TIDAL_STATE))
 //    {
 //    case SS_TIDAL_BOARD_SLATEPORT:
@@ -368,7 +368,7 @@ u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
 //        break;
 //    }
 //    *mapGroup = MAP_GROUP(ROUTE132);
-    *y = 20;
+//    *y = 20;
     return SS_TIDAL_LOCATION_CURRENTS;
 }
 
@@ -2837,8 +2837,8 @@ void UpdateFrontierGambler(u16 daysSince)
 
 void ShowFrontierGamblerLookingMessage(void)
 {
-    static const u8 *const sFrontierGamblerLookingMessages[] =
-    {
+//    static const u8 *const sFrontierGamblerLookingMessages[] =
+//    {
 //        BattleFrontier_Lounge3_Text_ChallengeBattleTowerSingle,
 //        BattleFrontier_Lounge3_Text_ChallengeBattleTowerDouble,
 //        BattleFrontier_Lounge3_Text_ChallengeBattleTowerMulti,
@@ -2851,17 +2851,17 @@ void ShowFrontierGamblerLookingMessage(void)
 //        BattleFrontier_Lounge3_Text_ChallengeBattleArena,
 //        BattleFrontier_Lounge3_Text_ChallengeBattlePike,
 //        BattleFrontier_Lounge3_Text_ChallengeBattlePyramid,
-    };
-
+//    };
+//
     u16 challenge = VarGet(VAR_FRONTIER_GAMBLER_CHALLENGE);
-    ShowFieldMessage(sFrontierGamblerLookingMessages[challenge]);
+//    ShowFieldMessage(sFrontierGamblerLookingMessages[challenge]);
     VarSet(VAR_FRONTIER_GAMBLER_SET_CHALLENGE, challenge);
 }
 
 void ShowFrontierGamblerGoMessage(void)
 {
-    static const u8 *const sFrontierGamblerGoMessages[] =
-    {
+//    static const u8 *const sFrontierGamblerGoMessages[] =
+//    {
 //        BattleFrontier_Lounge3_Text_GetToBattleTowerSingle,
 //        BattleFrontier_Lounge3_Text_GetToBattleTowerDouble,
 //        BattleFrontier_Lounge3_Text_GetToBattleTowerMulti,
@@ -2874,9 +2874,9 @@ void ShowFrontierGamblerGoMessage(void)
 //        BattleFrontier_Lounge3_Text_GetToBattleArena,
 //        BattleFrontier_Lounge3_Text_GetToBattlePike,
 //        BattleFrontier_Lounge3_Text_GetToBattlePyramid,
-    };
+//    };
 
-    ShowFieldMessage(sFrontierGamblerGoMessages[VarGet(VAR_FRONTIER_GAMBLER_SET_CHALLENGE)]);
+//    ShowFieldMessage(sFrontierGamblerGoMessages[VarGet(VAR_FRONTIER_GAMBLER_SET_CHALLENGE)]);
 }
 
 void FrontierGamblerSetWonOrLost(bool8 won)
@@ -3283,7 +3283,7 @@ static void Task_DeoxysRockInteraction(u8 taskId)
 
 static void ChangeDeoxysRockLevel(u8 rockLevel)
 {
-    u8 objectEventId;
+ //   u8 objectEventId;
     LoadPalette(&sDeoxysRockPalettes[rockLevel], OBJ_PLTT_ID(ROCK_PAL_ID), PLTT_SIZEOF(4));
 //    TryGetObjectEventIdByLocalIdAndMap(LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objectEventId);
 

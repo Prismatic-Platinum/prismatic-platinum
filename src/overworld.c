@@ -180,7 +180,6 @@ static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
 // adjusted key code, effectively intercepting the input before anything
 // can process it.
 static u16 (*sPlayerKeyInterceptCallback)(u32);
-static u16 GetNightMusicIfAvaliable(u16 dayMusic);
 static bool8 sReceivingFromLink;
 static u8 sRfuKeepAliveTimer;
 
@@ -1156,7 +1155,7 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_MT_CHIMNEY;
     RtcCalcLocalTime();
     if (gLocalTime.hours < 8 || gLocalTime.hours > 19) {
-        u16 dayMusic = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
+        dayMusic = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
         return GetNightMusicIfAvailable(dayMusic);
     }
     else
@@ -1285,7 +1284,7 @@ u8 GetMapMusicFadeoutSpeed(void)
 
 void TryFadeOutOldMapMusic(void)
 {
-    u16 currentMusic = GetCurrentMapMusic();
+//    u16 currentMusic = GetCurrentMapMusic();
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {

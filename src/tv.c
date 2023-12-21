@@ -135,7 +135,7 @@ static void InitWorldOfMastersShowAttempt(void);
 static void TryPutPokemonTodayFailedOnTheAir(void);
 static void TryStartRandomMassOutbreak(void);
 static void TryPutRandomPokeNewsOnAir(void);
-static void SortPurchasesByQuantity(void);
+static void UNUSED SortPurchasesByQuantity(void);
 static void UpdateMassOutbreakTimeLeft(u16);
 static void TryEndMassOutbreak(u16);
 static void UpdatePokeNewsCountdown(u16);
@@ -2797,7 +2797,7 @@ static bool8 IsRecordMixShowAlreadySpawned(u8 kind, bool8 delete)
     return FALSE;
 }
 
-static void SortPurchasesByQuantity(void)
+static void UNUSED SortPurchasesByQuantity(void)
 {
     u8 i, j;
 

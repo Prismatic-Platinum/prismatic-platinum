@@ -820,7 +820,6 @@ const struct WarpEvent* SetWarpDestinationTrainerHill4F(void)
 const struct WarpEvent* SetWarpDestinationTrainerHillFinalFloor(u8 warpEventId)
 {
     u8 numFloors;
-    const struct MapHeader *header;
 
     if (warpEventId == 1)
         return &gMapHeader.events->warps[1];
@@ -877,6 +876,7 @@ void SetHillTrainerFlag(void)
 const u8 *GetTrainerHillTrainerScript(void)
 {
 //    return TrainerHill_EventScript_TrainerBattle;
+    return 0;
 }
 
 static void ShowTrainerHillPostBattleText(void)

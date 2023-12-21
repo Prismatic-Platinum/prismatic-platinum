@@ -1577,8 +1577,8 @@ static void Task_HandleFrontierMap(u8 taskId)
     tState++;
 }
 
-static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
-{
+//static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
+//{
     // In Battle Tower
 //    if ((mapNum >= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_LOBBY) && mapNum <= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_BATTLE_ROOM))
 //     || (mapNum >= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM) && mapNum <= MAP_NUM(BATTLE_FRONTIER_BATTLE_TOWER_MULTI_BATTLE_ROOM)))
@@ -1625,15 +1625,16 @@ static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a fro
 //        return FRONTIER_FACILITY_PYRAMID + 1;
 
 //    else
-        return 0;
-}
+//        return 0;
+//}
 
 static void InitFrontierMapSprites(void)
 {
     struct SpriteTemplate sprite;
     u8 spriteId;
-    u8 id;
-    s16 x = 0, y;
+    u8 id = 0;
+    s16 x = 0; 
+    s16 y = 0;
 
     FreeAllSpritePalettes();
     LoadSpritePalettes(sSpritePalettes);
