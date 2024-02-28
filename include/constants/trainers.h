@@ -110,6 +110,23 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
+//Platinum Trainers
+#define TRAINER_PIC_DP_Ace_Trainer_DoubleTeam             93
+#define TRAINER_DP_Ace_Trainer_F          94
+#define TRAINER_DP_Ace_Trainer_M          95
+#define TRAINER_DP_Ace_Trainer_Snow_F     96
+#define TRAINER_DP_Ace_Trainer_Snow_M     97
+#define TRAINER_DP_Aroma_Lady             98
+#define TRAINER_DP_Barry                  99
+#define TRAINER_Battle_Girl               100
+#define TRAINER_DP_Beauty                 101
+#define TRAINER_DP_Bertha                 102
+#define TRAINER_DP_Bird_Keeper            103
+#define TRAINER_DP_Black_Belt             104
+#define TRAINER_DP_Breeder_F              105
+#define TRAINER_DP_Breeder_M              106
+#define TRAINER_DP_Buck                   107
+#define TRAINER_DP_Bug_Catcher            108
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
