@@ -11804,3 +11804,12 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+//Platinum Trainers
+
+static const struct TrainerMon sParty_Cynthia_Test[] = {
+    {
+    .lvl = 5,
+    .species = SPECIES_GARCHOMP,
+    }
+};
