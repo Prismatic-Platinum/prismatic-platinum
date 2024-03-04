@@ -508,3 +508,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route201/scripts.inc"
 
 	.include "data/maps/LakeVerity/scripts.inc"
+
+	.include "data/maps/SandgemTown/scripts.inc"
+
+	.include "data/maps/Route202/scripts.inc"
+
+	.include "data/maps/Route203/scripts.inc"
+
+	.include "data/maps/Route204/scripts.inc"
+
+	.include "data/maps/OreburghGate/scripts.inc"

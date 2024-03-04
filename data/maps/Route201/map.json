@@ -17,6 +17,11 @@
       "map": "MAP_TWINLEAF_TOWN",
       "offset": 22,
       "direction": "down"
+    },
+    {
+      "map": "MAP_SANDGEM_TOWN",
+      "offset": -6,
+      "direction": "right"
     }
   ],
   "object_events": [

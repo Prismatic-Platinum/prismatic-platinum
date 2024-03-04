@@ -987,9 +987,59 @@
       "width": 44,
       "height": 42,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/LakeVerity/border.bin",
       "blockdata_filepath": "data/layouts/LakeVerity/map.bin"
+    },
+    {
+      "id": "LAYOUT_SANDGEM_TOWN",
+      "name": "SandgemTown_Layout",
+      "width": 33,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/SandgemTown/border.bin",
+      "blockdata_filepath": "data/layouts/SandgemTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE202",
+      "name": "Route202_Layout",
+      "width": 30,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route202/border.bin",
+      "blockdata_filepath": "data/layouts/Route202/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE203",
+      "name": "Route203_Layout",
+      "width": 64,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route203/border.bin",
+      "blockdata_filepath": "data/layouts/Route203/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE204",
+      "name": "Route204_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route204/border.bin",
+      "blockdata_filepath": "data/layouts/Route204/map.bin"
+    },
+    {
+      "id": "LAYOUT_OREBURGH_GATE",
+      "name": "OreburghGate_Layout",
+      "width": 28,
+      "height": 28,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/OreburghGate/border.bin",
+      "blockdata_filepath": "data/layouts/OreburghGate/map.bin"
     }
   ]
 }

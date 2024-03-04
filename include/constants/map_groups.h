@@ -15,6 +15,11 @@
 #define MAP_TWINLEAF_TOWN   (6 | (0 << 8))
 #define MAP_ROUTE201        (7 | (0 << 8))
 #define MAP_LAKE_VERITY     (8 | (0 << 8))
+#define MAP_SANDGEM_TOWN    (9 | (0 << 8))
+#define MAP_ROUTE202        (10 | (0 << 8))
+#define MAP_ROUTE203        (11 | (0 << 8))
+#define MAP_ROUTE204        (12 | (0 << 8))
+#define MAP_OREBURGH_GATE   (13 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
