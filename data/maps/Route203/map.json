@@ -3,7 +3,7 @@
   "name": "Route203",
   "layout": "LAYOUT_ROUTE203",
   "music": "MUS_DP_ROUTE203_DAY",
-  "region_map_section": "MAPSEC_NONE",
+  "region_map_section": "MAPSEC_ROUTE_203",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -12,7 +12,13 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_TWINLEAF_TOWN",
+      "offset": 2,
+      "direction": "left"
+    }
+  ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",

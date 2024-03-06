@@ -1015,7 +1015,7 @@
       "id": "LAYOUT_ROUTE203",
       "name": "Route203_Layout",
       "width": 64,
-      "height": 26,
+      "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route203/border.bin",
