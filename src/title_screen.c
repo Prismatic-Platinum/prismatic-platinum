@@ -53,7 +53,7 @@ static void CB2_GoToResetRtcScreen(void);
 static void CB2_GoToSoundCheckScreen(void);
 static void CB2_GoToBerryFixScreen(void);
 static void CB2_GoToCopyrightScreen(void);
-static void UpdateLegendaryMarkingColor(u8);
+//static void UpdateLegendaryMarkingColor(u8);
 
 static void SpriteCB_VersionBannerLeft(struct Sprite *sprite);
 static void SpriteCB_VersionBannerRight(struct Sprite *sprite);
@@ -66,7 +66,7 @@ static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.
 static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.lz");
 static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
-static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
+//static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
 
 
 
@@ -606,8 +606,8 @@ void CB2_InitTitleScreen(void)
         LZ77UnCompVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
         LZ77UnCompVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
         // bg1
-        LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
-        LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
+        //LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
+        //LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
         ScanlineEffect_Stop();
         ResetTasks();
         ResetSpriteData();
@@ -815,18 +815,20 @@ static void Task_TitleScreenPhase3(u8 taskId)
     {
         SetGpuReg(REG_OFFSET_BG2Y_L, 0);
         SetGpuReg(REG_OFFSET_BG2Y_H, 0);
-        if (++gTasks[taskId].tCounter & 1)
+        /*if (++gTasks[taskId].tCounter & 1)
         {
             gTasks[taskId].tBg1Y++;
             gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
             gBattle_BG1_X = 0;
         }
-        UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
+        */
+        //UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
             SetMainCallback2(CB2_GoToCopyrightScreen);
         }
+        
     }
 }
 
@@ -871,7 +873,7 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
-static void UpdateLegendaryMarkingColor(u8 frameNum)
+/*static void UpdateLegendaryMarkingColor(u8 frameNum)
 {
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
@@ -884,3 +886,4 @@ static void UpdateLegendaryMarkingColor(u8 frameNum)
         LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
    }
 }
+*/
