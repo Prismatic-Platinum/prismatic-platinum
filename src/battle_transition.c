@@ -24,6 +24,8 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
+#include "event_data.h"
+#include "constants/battle_transition.h"
 
 #define PALTAG_UNUSED_MUGSHOT 0x100A
 
@@ -287,6 +289,7 @@ static bool8 MugshotTrainerPic_Init(struct Sprite *);
 static bool8 MugshotTrainerPic_Slide(struct Sprite *);
 static bool8 MugshotTrainerPic_SlideSlow(struct Sprite *);
 static bool8 MugshotTrainerPic_SlideOffscreen(struct Sprite *);
+static void Task_Mugshot(u8 taskId);
 
 static s16 sDebug_RectangularSpiralData;
 static u8 sTestingTransitionId;
@@ -388,6 +391,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ] = Task_FrontierCirclesCrossInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesAsymmetricSpiralInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
+    [B_TRANSITION_MUGSHOT] = Task_Mugshot,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -547,7 +551,7 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_PHOEBE]   = TRAINER_PIC_ELITE_FOUR_PHOEBE,
     [MUGSHOT_GLACIA]   = TRAINER_PIC_ELITE_FOUR_GLACIA,
     [MUGSHOT_DRAKE]    = TRAINER_PIC_ELITE_FOUR_DRAKE,
-    [MUGSHOT_CHAMPION] = TRAINER_PIC_CHAMPION_WALLACE,
+    [MUGSHOT_CHAMPION] = TRAINER_PIC_DP_Cynthia,
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
@@ -555,7 +559,7 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_PHOEBE] =   {0x200, 0x200},
     [MUGSHOT_GLACIA] =   {0x1B0, 0x1B0},
     [MUGSHOT_DRAKE] =    {0x1A0, 0x1A0},
-    [MUGSHOT_CHAMPION] = {0x188, 0x188},
+    [MUGSHOT_CHAMPION] = {0x200, 0x200},
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -563,7 +567,7 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_PHOEBE] =   { 0,  0},
     [MUGSHOT_GLACIA] =   {-4,  4},
     [MUGSHOT_DRAKE] =    { 0,  5},
-    [MUGSHOT_CHAMPION] = {-8,  7},
+    [MUGSHOT_CHAMPION] = {0,  0},
 };
 
 static const TransitionSpriteCallback sMugshotTrainerPicFuncs[] =
@@ -900,7 +904,7 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_PHOEBE] = sMugshotPal_Phoebe,
     [MUGSHOT_GLACIA] = sMugshotPal_Glacia,
     [MUGSHOT_DRAKE] = sMugshotPal_Drake,
-    [MUGSHOT_CHAMPION] = sMugshotPal_Champion
+    [MUGSHOT_CHAMPION] = sMugshotPal_Sidney
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
@@ -2692,6 +2696,12 @@ static void IncrementTrainerPicState(s16 spriteId)
 static s16 IsTrainerPicSlideDone(s16 spriteId)
 {
     return gSprites[spriteId].sDone;
+}
+
+static void Task_Mugshot(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = VarGet(VAR_MUGSHOT_ID);
+    DoMugshotTransition(taskId);
 }
 
 #undef sState

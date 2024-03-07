@@ -562,3 +562,6 @@ const u32 gTrainerPalette_DP_Young_Couple[] = INCBIN_U32("graphics/trainers/fron
 
 const u32 gTrainerFrontPic_DP_Youngster[] = INCBIN_U32("graphics/trainers/front_pics/DP_Youngster.4bpp.lz");
 const u32 gTrainerPalette_DP_Youngster[] = INCBIN_U32("graphics/trainers/front_pics/DP_Youngster.gbapal.lz");
+
+const u32 gTrainerFrontPic_DP_Cynthia_Mugshot[] = INCBIN_U32("graphics/trainers/front_pics/DP_cynthia_mugshot.4bpp.lz");
+const u32 gTrainerPalette_DP_Cynthia_Mugshot[] = INCBIN_U32("graphics/trainers/front_pics/DP_cynthia_mugshot.gbapal.lz");

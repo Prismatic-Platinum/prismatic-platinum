@@ -286,6 +286,7 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(DP_Worker, gTrainerFrontPic_DP_Worker, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(DP_Young_Couple, gTrainerFrontPic_DP_Young_Couple, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(DP_Youngster, gTrainerFrontPic_DP_Youngster, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(DP_CYNTHIA_MUGSHOT, gTrainerFrontPic_DP_Cynthia_Mugshot, TRAINER_PIC_SIZE),
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
@@ -477,4 +478,5 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(DP_Worker, gTrainerPalette_DP_Worker),
     TRAINER_PAL(DP_Young_Couple, gTrainerPalette_DP_Young_Couple),
     TRAINER_PAL(DP_Youngster, gTrainerPalette_DP_Youngster),
+    TRAINER_PAL(DP_CYNTHIA_MUGSHOT, gTrainerPalette_DP_Cynthia_Mugshot),
 };

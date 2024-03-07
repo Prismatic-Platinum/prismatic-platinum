@@ -251,6 +251,7 @@ extern const u32 gTrainerFrontPic_DP_Waitress[];
 extern const u32 gTrainerFrontPic_DP_Worker[];
 extern const u32 gTrainerFrontPic_DP_Young_Couple[];
 extern const u32 gTrainerFrontPic_DP_Youngster[];
+extern const u32 gTrainerFrontPic_DP_Cynthia_Mugshot[];
 
 extern const u32 gTrainerPalette_Hiker[];
 extern const u32 gTrainerPalette_AquaGruntM[];
@@ -437,6 +438,7 @@ extern const u32 gTrainerPalette_DP_Waitress[];
 extern const u32 gTrainerPalette_DP_Worker[];
 extern const u32 gTrainerPalette_DP_Young_Couple[];
 extern const u32 gTrainerPalette_DP_Youngster[];
+extern const u32 gTrainerPalette_DP_Cynthia_Mugshot[];
 
 
 extern const u8 gTrainerBackPic_Brendan[];
