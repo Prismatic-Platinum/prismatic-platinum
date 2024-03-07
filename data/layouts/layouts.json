@@ -1040,6 +1040,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/OreburghGate/border.bin",
       "blockdata_filepath": "data/layouts/OreburghGate/map.bin"
+    },
+    {
+      "id": "LAYOUT_RAVAGED_PATH",
+      "name": "RavagedPath_Layout",
+      "width": 34,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RavagedPath/border.bin",
+      "blockdata_filepath": "data/layouts/RavagedPath/map.bin"
     }
   ]
 }

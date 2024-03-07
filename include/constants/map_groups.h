@@ -20,6 +20,7 @@
 #define MAP_ROUTE203        (11 | (0 << 8))
 #define MAP_ROUTE204        (12 | (0 << 8))
 #define MAP_OREBURGH_GATE   (13 | (0 << 8))
+#define MAP_RAVAGED_PATH    (14 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
