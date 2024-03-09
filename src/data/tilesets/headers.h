@@ -826,17 +826,6 @@ const struct Tileset gTileset_UnionRoom =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_JubilifeCity =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_JubilifeCity,
-    .palettes = gTilesetPalettes_JubilifeCity,
-    .metatiles = gMetatiles_JubilifeCity,
-    .metatileAttributes = gMetatileAttributes_JubilifeCity,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_JubilifeCitySecondary =
 {
     .isCompressed = TRUE,
