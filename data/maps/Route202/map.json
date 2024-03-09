@@ -17,6 +17,11 @@
       "map": "MAP_SANDGEM_TOWN",
       "offset": -4,
       "direction": "down"
+    },
+    {
+      "map": "MAP_JUBILIFE_CITY",
+      "offset": -34,
+      "direction": "up"
     }
   ],
   "object_events": [
