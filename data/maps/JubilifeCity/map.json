@@ -23,7 +23,20 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 39,
+      "y": 52,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 52,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
