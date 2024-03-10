@@ -210,3 +210,6 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_JubilifeCitySecondary[] = INCBIN_U16("data/tilesets/secondary/jubilife_city_secondary/metatiles.bin");
 const u16 gMetatileAttributes_JubilifeCitySecondary[] = INCBIN_U16("data/tilesets/secondary/jubilife_city_secondary/metatile_attributes.bin");
+
+const u16 gMetatiles_General_Jubilife[] = INCBIN_U16("data/tilesets/primary/general_jubilife/metatiles.bin");
+const u16 gMetatileAttributes_General_Jubilife[] = INCBIN_U16("data/tilesets/primary/general_jubilife/metatile_attributes.bin");

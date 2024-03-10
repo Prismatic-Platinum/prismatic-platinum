@@ -836,3 +836,14 @@ const struct Tileset gTileset_JubilifeCitySecondary =
     .metatileAttributes = gMetatileAttributes_JubilifeCitySecondary,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_General_Jubilife =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General_Jubilife,
+    .palettes = gTilesetPalettes_General_Jubilife,
+    .metatiles = gMetatiles_General_Jubilife,
+    .metatileAttributes = gMetatileAttributes_General_Jubilife,
+    .callback = NULL,
+};

@@ -17,11 +17,6 @@
       "map": "MAP_SANDGEM_TOWN",
       "offset": -4,
       "direction": "down"
-    },
-    {
-      "map": "MAP_JUBILIFE_CITY",
-      "offset": -34,
-      "direction": "up"
     }
   ],
   "object_events": [
@@ -66,7 +61,27 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 13,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY",
+      "dest_warp_id": "8"
+    }
   ],
   "coord_events": [
 

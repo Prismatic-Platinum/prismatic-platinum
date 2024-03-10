@@ -1005,9 +1005,9 @@
       "id": "LAYOUT_ROUTE202",
       "name": "Route202_Layout",
       "width": 30,
-      "height": 34,
+      "height": 38,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_JubilifeCitySecondary",
       "border_filepath": "data/layouts/Route202/border.bin",
       "blockdata_filepath": "data/layouts/Route202/map.bin"
     },
@@ -1056,7 +1056,7 @@
       "name": "JubilifeCity_Layout",
       "width": 64,
       "height": 70,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_General_Jubilife",
       "secondary_tileset": "gTileset_JubilifeCitySecondary",
       "border_filepath": "data/layouts/JubilifeCity/border.bin",
       "blockdata_filepath": "data/layouts/JubilifeCity/map.bin"
