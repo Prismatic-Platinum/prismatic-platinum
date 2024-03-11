@@ -833,13 +833,13 @@ if (I_VS_SEEKER_CHARGING != 0)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     InitMap();
-    CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
-    LoadSecondaryTilesetPalette(gMapHeader.mapLayout);
+    CopyMapTilesetsToVram(gMapHeader.mapLayout);
+    LoadMapTilesetPalettes(gMapHeader.mapLayout);
 
     for (paletteIndex = NUM_PALS_IN_PRIMARY; paletteIndex < NUM_PALS_TOTAL; paletteIndex++)
         ApplyWeatherColorMapToPal(paletteIndex);
 
-    InitSecondaryTilesetAnimation();
+    InitTilesetAnimations();
     UpdateLocationHistoryForRoamer();
     RoamerMove();
     DoCurrentWeather();

@@ -3,7 +3,7 @@
   "name": "JubilifeCity",
   "layout": "LAYOUT_JUBILIFE_CITY",
   "music": "MUS_DP_JUBILIFE_DAY",
-  "region_map_section": "MAPSEC_NONE",
+  "region_map_section": "MAPSEC_JUBILIFE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",
@@ -12,7 +12,13 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_ROUTE202",
+      "offset": 34,
+      "direction": "down"
+    }
+  ],
   "object_events": [
 
   ],
@@ -48,34 +54,6 @@
     {
       "x": 13,
       "y": 15,
-      "elevation": 0,
-      "dest_map": "MAP_JUBILIFE_CITY",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 46,
-      "y": 62,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE202",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 47,
-      "y": 62,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE202",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 45,
-      "y": 62,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE202",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 46,
-      "y": 61,
       "elevation": 0,
       "dest_map": "MAP_JUBILIFE_CITY",
       "dest_warp_id": "0"

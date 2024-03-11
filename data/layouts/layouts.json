@@ -1005,7 +1005,7 @@
       "id": "LAYOUT_ROUTE202",
       "name": "Route202_Layout",
       "width": 30,
-      "height": 38,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_JubilifeCitySecondary",
       "border_filepath": "data/layouts/Route202/border.bin",

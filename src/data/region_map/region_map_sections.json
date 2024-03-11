@@ -1710,6 +1710,38 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROUTE_201",
+      "name": "ROUTE 201",
+      "x": 4,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROUTE_202",
+      "name": "ROUTE 202",
+      "x": 4,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SANDGEM_TOWN",
+      "name": "SANDGEM TOWN",
+      "x": 4,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_JUBILIFE_CITY",
+      "name": "JUBILIFE CITY",
+      "x": 4,
+      "y": 10,
+      "width": 1,
+      "height": 1
     }
   ]
 }
