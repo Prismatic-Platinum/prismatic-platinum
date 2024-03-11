@@ -1007,7 +1007,7 @@
       "width": 30,
       "height": 34,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_JubilifeCitySecondary",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route202/border.bin",
       "blockdata_filepath": "data/layouts/Route202/map.bin"
     },
