@@ -1060,6 +1060,16 @@
       "secondary_tileset": "gTileset_JubilifeCitySecondary",
       "border_filepath": "data/layouts/JubilifeCity/border.bin",
       "blockdata_filepath": "data/layouts/JubilifeCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_TWINLEAF_TOWN_DAWNS_HOUSE_2F",
+      "name": "TwinleafTown_DawnsHouse_2F_Layout",
+      "width": 10,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/TwinleafTown_DawnsHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/TwinleafTown_DawnsHouse_2F/map.bin"
     }
   ]
 }

@@ -73,8 +73,8 @@
       "x": 15,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_TWINLEAF_TOWN",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_TWINLEAF_TOWN_DAWNS_HOUSE_2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
