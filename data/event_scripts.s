@@ -525,3 +525,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/JubilifeCity/scripts.inc"
 
 	.include "data/maps/TwinleafTown_DawnsHouse_2F/scripts.inc"
+
+	.include "data/maps/TwinleafTown_DawnsHouse_1F/scripts.inc"
