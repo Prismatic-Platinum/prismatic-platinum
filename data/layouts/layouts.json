@@ -1065,7 +1065,7 @@
       "id": "LAYOUT_TWINLEAF_TOWN_DAWNS_HOUSE_2F",
       "name": "TwinleafTown_DawnsHouse_2F_Layout",
       "width": 10,
-      "height": 11,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/TwinleafTown_DawnsHouse_2F/border.bin",
@@ -1080,6 +1080,26 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/TwinleafTown_DawnsHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/TwinleafTown_DawnsHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TWINLEAF_TOWN_BARRYS_HOUSE_1F",
+      "name": "TwinleafTown_BarrysHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/TwinleafTown_BarrysHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/TwinleafTown_BarrysHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TWINLEAF_TOWN_BARRYS_HOUSE_2F",
+      "name": "TwinleafTown_BarrysHouse_2F_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BarrysHouse",
+      "border_filepath": "data/layouts/TwinleafTown_BarrysHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/TwinleafTown_BarrysHouse_2F/map.bin"
     }
   ]
 }
