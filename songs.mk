@@ -606,6 +606,9 @@ $(MID_SUBDIR)/mus_vs_frontier_brain.s: %.s: %.mid
 $(MID_SUBDIR)/mus_vs_mew.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G116 -V090
 
+$(MID_SUBDIR)/mus_vs_rayquaza.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G114 -V080 -P1
+
 $(MID_SUBDIR)/mus_encounter_hiker.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G097 -V076
 
