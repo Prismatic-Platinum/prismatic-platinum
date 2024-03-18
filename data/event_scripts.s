@@ -1,6 +1,5 @@
 #include "config.h"
 #include "config/battle.h"
-#include "constants/battle_transition.h"
 #include "config/item.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
@@ -388,6 +387,10 @@ gText_ThankYouForAccessingMysteryGift::
 
 gText_PlayerFoundOneTMHM::
 	.string "{PLAYER} found one {STR_VAR_1}\n"
+	.string "{STR_VAR_2}!$"
+
+gText_PlayerFoundTMHMs::
+	.string "{PLAYER} found {STR_VAR_3} {STR_VAR_1}\n"
 	.string "{STR_VAR_2}!$"
 
 gText_Sudowoodo_Attacked::
