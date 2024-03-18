@@ -513,6 +513,27 @@ $(MID_SUBDIR)/mus_rg_game_freak.s: %.s: %.mid
 $(MID_SUBDIR)/mus_rg_teachy_tv_menu.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G186 -V059
 
+$(MID_SUBDIR)/mus_rg_sevii_123.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G173 -V084
+
+$(MID_SUBDIR)/mus_rg_sevii_cave.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G147 -V090
+
+$(MID_SUBDIR)/mus_rg_sevii_dungeon.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G146 -V090
+
+$(MID_SUBDIR)/mus_rg_teachy_tv_show.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G131 -V068
+
+$(MID_SUBDIR)/mus_rg_victory_gym_leader.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G171 -V090
+
+$(MID_SUBDIR)/mus_rg_victory_trainer.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G169 -V089
+
+$(MID_SUBDIR)/mus_rg_victory_wild.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G170 -V090
+
 $(MID_SUBDIR)/mus_rg_union_room.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G132 -V090
 
