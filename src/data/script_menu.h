@@ -782,6 +782,12 @@ static const struct MenuAction MultichoiceList_ExplainOrToggle[] =
 {
     {gText_Toggle},
     {gText_Info2},
+};
+
+static const struct MenuAction MultichoiceList_BerryPlot[] =
+{
+    {gText_Fertilize},
+    {gText_PlantBerry},
     {gText_Exit},
 };
 
@@ -922,6 +928,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_CHOOSE_LEVEL_CAP]           = MULTICHOICE(MultichoiceList_ChooseLevelCap),
     [MULTI_EXPLAIN_OR_TOGGLE]          = MULTICHOICE(MultichoiceList_ExplainOrToggle),
     [MULTI_POKETCH]                    = MULTICHOICE(MultichoiceList_Poketch), 
+    [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
 };
 
 const u8 *const gStdStrings[] =

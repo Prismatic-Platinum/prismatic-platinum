@@ -51,6 +51,10 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
+#if (DECAP_ENABLED) && (DECAP_MIRRORING) && !(DECAP_START_MENU)
+#define AddTextPrinterParameterized (AddTextPrinterFixedCaseParameterized)
+#endif
+
 // Menu actions
 enum
 {
@@ -760,7 +764,7 @@ static bool8 StartMenuPokeNavCallback(void)
         PlayRainStoppingSoundEffect();
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitPokeNav);  // Display PokeNav
+        SetMainCallback2(CB2_InitPokeNav);  // Display PokéNav
 
         return TRUE;
     }
@@ -1465,7 +1469,7 @@ static void ShowSaveInfoWindow(void)
 
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
     {
-        // Print pokedex count
+        // Print Pokédex count
         yOffset += 16;
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);

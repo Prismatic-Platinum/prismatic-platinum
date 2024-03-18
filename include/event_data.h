@@ -49,7 +49,5 @@ extern u16 gSpecialVar_Facing;
 extern u16 gSpecialVar_MonBoxId;
 extern u16 gSpecialVar_MonBoxPos;
 extern u16 gSpecialVar_Unused_0x8014;
-extern const u16 sLevelCapFlags[NUM_SOFT_CAPS];
-extern const u16 sLevelCaps[NUM_SOFT_CAPS];
 
 #endif // GUARD_EVENT_DATA_H

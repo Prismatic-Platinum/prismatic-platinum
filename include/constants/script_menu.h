@@ -125,6 +125,7 @@
 #define MULTI_CHOOSE_LEVEL_CAP             114
 #define MULTI_EXPLAIN_OR_TOGGLE            115
 #define MULTI_POKETCH                      116
+#define MULTI_BERRY_PLOT                   117
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
@@ -167,5 +168,11 @@
 #define STDSTRING_BATTLE_ARENA     27
 #define STDSTRING_BATTLE_PIKE      28
 #define STDSTRING_BATTLE_PYRAMID   29
+
+// Dynamic Multichoice Callbacks
+
+#define DYN_MULTICHOICE_CB_DEBUG      0
+#define DYN_MULTICHOICE_CB_SHOW_ITEM  1
+#define DYN_MULTICHOICE_CB_NONE       255
 
 #endif //GUARD_SCRIPT_MENU_CONSTANTS_H

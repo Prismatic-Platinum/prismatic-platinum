@@ -14,8 +14,6 @@
 #define TRAINER_SECRET_BASE                 1024
 #define TRAINER_LINK_OPPONENT               2048
 #define TRAINER_UNION_ROOM                  3072
-#define TRAINER_STEVEN_PARTNER              3075
-#define TRAINER_CUSTOM_PARTNER              3076
 
 #define TRAINER_PIC_HIKER                  0
 #define TRAINER_PIC_AQUA_GRUNT_M           1
@@ -111,7 +109,7 @@
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
 //Platinum Trainers
-#define TRAINER_PIC_DP_Ace_Trainer_DoubleTeam             93
+#define TRAINER_PIC_DP_Ace_Trainer_DoubleTeam 93
 #define TRAINER_PIC_DP_Ace_Trainer_F          94
 #define TRAINER_PIC_DP_Ace_Trainer_M          95
 #define TRAINER_PIC_DP_Ace_Trainer_Snow_F     96
@@ -174,7 +172,7 @@
 #define TRAINER_PIC_DP_Psychic_F              153
 #define TRAINER_PIC_DP_Psychic_M              154
 #define TRAINER_PIC_DP_Rancher                155
-#define TRAINER_PIC_DP_Rancher_Duo_Belle_and_Pa  156
+#define TRAINER_PIC_DP_Rancher_Duo_Belle_and_Pa 156
 #define TRAINER_PIC_DP_Reporter               157
 #define TRAINER_PIC_DP_Rich_Boy               158
 #define TRAINER_PIC_DP_Riley                  159
@@ -203,7 +201,7 @@
 #define TRAINER_PIC_DP_Young_Couple           182
 #define TRAINER_PIC_DP_Youngster              183
 #define TRAINER_PIC_DP_CYNTHIA_MUGSHOT        184
-
+#define TRAINER_PIC_COUNT                     185
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

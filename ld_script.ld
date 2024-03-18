@@ -13,19 +13,35 @@ MEMORY
 
 SECTIONS {
 
-    ewram 0x2000000 (NOLOAD) :
+    .ewram ORIGIN(EWRAM) : AT (__ewram_lma)
+    ALIGN(4)
+    {
+        __ewram_start = .;
+        *(.ewram*)
+        __ewram_end = .;
+    } > EWRAM
+
+    .ewram.sbss (NOLOAD) :
     ALIGN(4)
     {
         INCLUDE "sym_ewram.ld"
-        src/*.o(ewram_data);
-        gflib/*.o(ewram_data);
+        src/*.o(.sbss);
+        gflib/*.o(.sbss);
 
         *libc.a:impure.o(.data);
         *libc.a:locale.o(.data);
         *libc.a:mallocr.o(.data);
     } > EWRAM
 
-    iwram 0x3000000 (NOLOAD) :
+    .iwram ORIGIN(IWRAM) : AT (__iwram_lma)
+    ALIGN(4)
+    {
+        __iwram_start = .;
+        *(.iwram*);
+        __iwram_end = .;
+    } > IWRAM
+
+    .iwram.bss (NOLOAD) :
     ALIGN(4)
     {
         /* .bss starts at 0x3000000 */
@@ -40,6 +56,7 @@ SECTIONS {
         /* COMMON starts at 0x30022A8 */
         INCLUDE "sym_common.ld"
         *libc.a:sbrkr.o(COMMON);
+        gStackBase = .;
     } > IWRAM
 
     /* BEGIN ROM DATA */
@@ -1133,7 +1150,7 @@ SECTIONS {
         sound/songs/midi/mus_contest.o(.rodata);
         sound/songs/midi/mus_encounter_magma.o(.rodata);
         sound/songs/midi/mus_intro_battle.o(.rodata);
-        sound/songs/mus_weather_kyogre.o(.rodata);
+        sound/songs/midi/mus_abnormal_weather.o(.rodata);
         sound/songs/midi/mus_weather_groudon.o(.rodata);
         sound/songs/midi/mus_sootopolis.o(.rodata);
         sound/songs/midi/mus_contest_results.o(.rodata);
@@ -1147,6 +1164,23 @@ SECTIONS {
         sound/songs/midi/mus_encounter_champion.o(.rodata);
         sound/songs/midi/mus_credits.o(.rodata);
         sound/songs/midi/mus_end.o(.rodata);
+        sound/songs/midi/mus_b_frontier.o(.rodata);
+        sound/songs/midi/mus_b_arena.o(.rodata);
+        sound/songs/midi/mus_obtain_b_points.o(.rodata);
+        sound/songs/midi/mus_register_match_call.o(.rodata);
+        sound/songs/midi/mus_b_pyramid.o(.rodata);
+        sound/songs/midi/mus_b_pyramid_top.o(.rodata);
+        sound/songs/midi/mus_b_palace.o(.rodata);
+        sound/songs/midi/mus_rayquaza_appears.o(.rodata);
+        sound/songs/midi/mus_b_tower.o(.rodata);
+        sound/songs/midi/mus_obtain_symbol.o(.rodata);
+        sound/songs/midi/mus_b_dome.o(.rodata);
+        sound/songs/midi/mus_b_pike.o(.rodata);
+        sound/songs/midi/mus_b_factory.o(.rodata);
+        sound/songs/midi/mus_vs_rayquaza.o(.rodata);
+        sound/songs/midi/mus_vs_frontier_brain.o(.rodata);
+        sound/songs/midi/mus_vs_mew.o(.rodata);
+        sound/songs/midi/mus_b_dome_lobby.o(.rodata);
         sound/songs/midi/mus_vs_wild.o(.rodata);
         sound/songs/midi/mus_vs_aqua_magma.o(.rodata);
         sound/songs/midi/mus_vs_trainer.o(.rodata);
@@ -1195,6 +1229,9 @@ SECTIONS {
         sound/songs/midi/mus_rg_silph.o(.rodata);
         sound/songs/midi/mus_rg_fuchsia.o(.rodata);
         sound/songs/midi/mus_rg_celadon.o(.rodata);
+        sound/songs/midi/mus_rg_victory_trainer.o(.rodata);
+        sound/songs/midi/mus_rg_victory_wild.o(.rodata);
+        sound/songs/midi/mus_rg_victory_gym_leader.o(.rodata);
         sound/songs/midi/mus_rg_vermillion.o(.rodata);
         sound/songs/midi/mus_rg_pewter.o(.rodata);
         sound/songs/midi/mus_rg_encounter_rival.o(.rodata);
@@ -1213,7 +1250,11 @@ SECTIONS {
         sound/songs/midi/mus_rg_net_center.o(.rodata);
         sound/songs/midi/mus_rg_mystery_gift.o(.rodata);
         sound/songs/midi/mus_rg_berry_pick.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_cave.o(.rodata);
+        sound/songs/midi/mus_rg_teachy_tv_show.o(.rodata);
         sound/songs/midi/mus_rg_sevii_route.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_dungeon.o(.rodata);
+        sound/songs/midi/mus_rg_sevii_123.o(.rodata);
         sound/songs/midi/mus_rg_sevii_45.o(.rodata);
         sound/songs/midi/mus_rg_sevii_67.o(.rodata);
         sound/songs/midi/mus_rg_poke_flute.o(.rodata);
@@ -1561,6 +1602,20 @@ SECTIONS {
         src/*.o(.rodata);
         gflib/*.o(.rodata);
         data/*.o(.rodata);
+    } > ROM = 0
+
+    .data.iwram :
+    ALIGN(4)
+    {
+        __iwram_lma = .;
+        . = . + (__iwram_end - __iwram_start);
+    } > ROM = 0
+
+    .data.ewram :
+    ALIGN(4)
+    {
+        __ewram_lma = .;
+        . = . + (__ewram_end - __ewram_start);
     } > ROM = 0
 
     __rom_end = .;
