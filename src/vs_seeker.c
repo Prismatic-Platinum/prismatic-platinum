@@ -658,7 +658,9 @@ static bool32 IsRegularLandTrainer(u8 graphicsId)
         OBJ_EVENT_GFX_WOMAN_2,
         OBJ_EVENT_GFX_WOMAN_4,
         OBJ_EVENT_GFX_WOMAN_5,
-        OBJ_EVENT_GFX_YOUNGSTER
+        OBJ_EVENT_GFX_YOUNGSTER,
+        //Platinum
+        OBJ_EVENT_GFX_DP_SCHOOL_KID_M
     };
 
     for (i = 0; i < ARRAY_COUNT(regularTrainersOnLand); i++)
