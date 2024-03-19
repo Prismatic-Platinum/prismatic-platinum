@@ -416,7 +416,6 @@ gSongTable::
 	song mus_contest, 0, 0
 	song mus_encounter_magma, 0, 0
 	song mus_intro_battle, 0, 0
-	song mus_weather_kyogre, 0, 0
 	song mus_weather_groudon, 0, 0
 	song mus_sootopolis, 0, 0
 	song mus_contest_results, 0, 0
