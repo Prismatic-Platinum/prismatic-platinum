@@ -242,6 +242,75 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 //Platinum
 #define OBJ_EVENT_GFX_DP_CYNTHIA                 239
+#define OBJ_EVENT_GFX_DP_AARON                   240
+#define OBJ_EVENT_GFX_DP_ACE_TRAINERF                 241
+#define OBJ_EVENT_GFX_DP_ACE_TRAINERM                 242
+#define OBJ_EVENT_GFX_DP_ACE_TRAINER_SNOWM                 243
+#define OBJ_EVENT_GFX_DP_BARRY                 244
+#define OBJ_EVENT_GFX_DP_BATTLE_GIRL                 245
+#define OBJ_EVENT_GFX_DP_BEAUTY                 246
+#define OBJ_EVENT_GFX_DP_BERTHA                 247
+#define OBJ_EVENT_GFX_DP_BLACK_BELT                 248
+#define OBJ_EVENT_GFX_DP_BREEDERF                 249
+#define OBJ_EVENT_GFX_DP_BUG_CATCHER                 250
+#define OBJ_EVENT_GFX_DP_BYRON                 251
+#define OBJ_EVENT_GFX_DP_CAMPER                 252
+#define OBJ_EVENT_GFX_DP_CHARON                 253
+#define OBJ_EVENT_GFX_DP_CHERYL                 254
+#define OBJ_EVENT_GFX_DP_COWGIRL                 255
+#define OBJ_EVENT_GFX_DP_CRASHER_WAKE                 256
+#define OBJ_EVENT_GFX_DP_CYRUS                 257
+#define OBJ_EVENT_GFX_DP_DRAGON_TAMER                 258
+#define OBJ_EVENT_GFX_DP_FANTINA                 259
+#define OBJ_EVENT_GFX_DP_FISHERMAN                 260
+#define OBJ_EVENT_GFX_DP_GALACTIC_GRUNTF                 261
+#define OBJ_EVENT_GFX_DP_GALACTIC_GRUNTM                 262
+#define OBJ_EVENT_GFX_DP_GENTLEMAN                 263
+#define OBJ_EVENT_GFX_DP_HIKER                 264
+#define OBJ_EVENT_GFX_DP_JUPITER                 265
+#define OBJ_EVENT_GFX_DP_LADY                 266
+#define OBJ_EVENT_GFX_DP_LOOKER                 267
+#define OBJ_EVENT_GFX_DP_LUCIAN                 268
+#define OBJ_EVENT_GFX_DP_MARLEY                 269
+#define OBJ_EVENT_GFX_DP_MARS                 270
+#define OBJ_EVENT_GFX_DP_MAYLENE                 271
+#define OBJ_EVENT_GFX_DP_MIRA                 272
+#define OBJ_EVENT_GFX_DP_OFFICER                 273
+#define OBJ_EVENT_GFX_DP_PAINTER                 274
+#define OBJ_EVENT_GFX_DP_PALMER                 275
+#define OBJ_EVENT_GFX_DP_PARASOL_LADY                 276
+#define OBJ_EVENT_GFX_DP_PICNICKER                 277
+#define OBJ_EVENT_GFX_DP_POKE_KID                 278
+#define OBJ_EVENT_GFX_DP_POKE_RANGERF                 279
+#define OBJ_EVENT_GFX_DP_POKE_RANGERM                 280
+#define OBJ_EVENT_GFX_DP_POKEFAN_F                 281
+#define OBJ_EVENT_GFX_DP_POKEFAN_M                 282
+#define OBJ_EVENT_GFX_DP_ROWAN                 283
+#define OBJ_EVENT_GFX_DP_PSYCHIC                 284
+#define OBJ_EVENT_GFX_DP_RANCHER                 285
+#define OBJ_EVENT_GFX_DP_RICH_BOY                 286
+#define OBJ_EVENT_GFX_DP_RICH_LADY                 287
+#define OBJ_EVENT_GFX_DP_ROCKER                 288
+#define OBJ_EVENT_GFX_DP_ROUGHNECK                 289
+#define OBJ_EVENT_GFX_DP_RUIN_MANIAC                 290
+#define OBJ_EVENT_GFX_DP_SAILOR                 291
+#define OBJ_EVENT_GFX_DP_SATURN                 292
+#define OBJ_EVENT_GFX_DP_SCIENTIST                 293
+#define OBJ_EVENT_GFX_DP_SKIERF                294
+#define OBJ_EVENT_GFX_DP_SKIERM                 295
+#define OBJ_EVENT_GFX_DP_SOCIALITE                 296
+#define OBJ_EVENT_GFX_DP_SUPERNERD                 297
+#define OBJ_EVENT_GFX_DP_SWIMMERF                 298
+#define OBJ_EVENT_GFX_DP_SWIMMERF2                 299
+#define OBJ_EVENT_GFX_DP_SWIMMERM                 300
+#define OBJ_EVENT_GFX_DP_SWIMMERM2                 301
+#define OBJ_EVENT_GFX_DP_VOLKNER                 302
+#define OBJ_EVENT_GFX_DP_WAITER                 303
+#define OBJ_EVENT_GFX_DP_WAITRESS                 304
+#define OBJ_EVENT_GFX_DP_WORKER                 305
+#define OBJ_EVENT_GFX_DP_YOUNG_COUPLEF                 306
+#define OBJ_EVENT_GFX_DP_YOUNG_COUPLEM                 307
+#define OBJ_EVENT_GFX_DP_YOUNGSTER                 308
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -252,7 +321,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_OBJ_EVENT_GFX                        240
+#define NUM_OBJ_EVENT_GFX                        309
 
 
 // These are dynamic object gfx ids.
