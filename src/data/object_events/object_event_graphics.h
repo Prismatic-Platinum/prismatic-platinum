@@ -100,7 +100,6 @@ const u32 gObjectEventPic_Youngster[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_BugCatcher[] = INCBIN_U32("graphics/object_events/pics/people/bug_catcher.4bpp");
 const u32 gObjectEventPic_PsychicM[] = INCBIN_U32("graphics/object_events/pics/people/psychic_m.4bpp");
 const u32 gObjectEventPic_SchoolKidM[] = INCBIN_U32("graphics/object_events/pics/people/school_kid_m.4bpp");
-const u32 gObjectEventPic_DP_SchoolKidM[] = INCBIN_U32("graphics/object_events/pics/people/DP_School_Kid_M.4bpp");
 const u32 gObjectEventPic_Maniac[] = INCBIN_U32("graphics/object_events/pics/people/maniac.4bpp");
 const u32 gObjectEventPic_HexManiac[] = INCBIN_U32("graphics/object_events/pics/people/hex_maniac.4bpp");
 const u32 gObjectEventPic_UnusedWoman[] = INCBIN_U32("graphics/object_events/pics/people/unused_woman.4bpp");
@@ -376,7 +375,13 @@ const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_HoOh[] = INCBIN_U32("graphics/object_events/pics/pokemon/ho_oh.4bpp");
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 //Platinum
-const u16 gObjectEventPal_DP_SchoolKidM[] = INCBIN_U16("graphics/object_events/palettes/DP_School_Kid_M.gbapal");
 
+const u32 gObjectEventPic_DP_SchoolKidM[] = INCBIN_U32("graphics/object_events/pics/people/DP_School_Kid_M.4bpp");
+const u16 gObjectEventPal_DP_SchoolKidM[] = INCBIN_U16("graphics/object_events/palettes/DP_School_Kid_M.gbapal");
+const u32 gObjectEventPic_DP_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/DP_cynthia.4bpp");
+const u16 gObjectEventPal_DP_Cynthia[] = INCBIN_U16("graphics/object_events/palettes/DP_cynthia.gbapal");
+
+
+//Dexnav
 const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/pics/cave_dust.4bpp");
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
