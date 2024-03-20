@@ -436,8 +436,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_CUTTABLE_TREE           0x1124
 //Platinum
-#define OBJ_EVENT_PAL_DP_SCHOOL_KID_M             0x1125
-#define OBJ_EVENT_PAL_DP_CYNTHIA                  0x1126
+#define OBJ_EVENT_PAL_DP_CYNTHIA                  0x1125
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -485,7 +484,6 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_CuttableTree,          OBJ_EVENT_PAL_TAG_CUTTABLE_TREE},
-    {gObjectEventPal_DP_SchoolKidM,         OBJ_EVENT_PAL_DP_SCHOOL_KID_M},
     {gObjectEventPal_DP_Cynthia,            OBJ_EVENT_PAL_DP_CYNTHIA},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},

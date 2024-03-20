@@ -376,8 +376,6 @@ const u32 gObjectEventPic_HoOh[] = INCBIN_U32("graphics/object_events/pics/pokem
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 //Platinum
 
-const u32 gObjectEventPic_DP_SchoolKidM[] = INCBIN_U32("graphics/object_events/pics/people/DP_School_Kid_M.4bpp");
-const u16 gObjectEventPal_DP_SchoolKidM[] = INCBIN_U16("graphics/object_events/palettes/DP_School_Kid_M.gbapal");
 const u32 gObjectEventPic_DP_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/DP_cynthia.4bpp");
 const u16 gObjectEventPal_DP_Cynthia[] = INCBIN_U16("graphics/object_events/palettes/DP_cynthia.gbapal");
 
