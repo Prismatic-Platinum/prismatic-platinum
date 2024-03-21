@@ -1054,8 +1054,8 @@
     {
       "id": "LAYOUT_JUBILIFE_CITY",
       "name": "JubilifeCity_Layout",
-      "width": 64,
-      "height": 70,
+      "width": 72,
+      "height": 78,
       "primary_tileset": "gTileset_General_Jubilife",
       "secondary_tileset": "gTileset_JubilifeCitySecondary",
       "border_filepath": "data/layouts/JubilifeCity/border.bin",
