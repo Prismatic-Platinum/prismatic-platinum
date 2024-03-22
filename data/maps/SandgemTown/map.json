@@ -28,7 +28,13 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 19,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_SANDGEM_TOWN",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
