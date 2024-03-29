@@ -210,10 +210,10 @@
 #define METATILE_General_CalmWater             0x170
 #define METATILE_General_CaveEntrance_Bottom   0x0A7
 #define METATILE_General_CaveEntrance_Top      0x09F
-#define METATILE_General_Door                  0x029
 #define METATILE_General_Door_Gym              0x1CD
 #define METATILE_General_Door_PokeCenter       0x0D5
 #define METATILE_General_Door_PokeMart         0x041
+#define METATILE_General_Door_Twinleaf         0x029
 #define METATILE_General_Grass                 0x001
 #define METATILE_General_Grass_TreeLeft        0x1CE
 #define METATILE_General_Grass_TreeRight       0x1CF
@@ -298,7 +298,7 @@
 #define METATILE_Mauville_DeepSand_Center     0x251
 #define METATILE_Mauville_Door                0x2AC
 #define METATILE_Mauville_Door_BattleTent     0x3D4
-#define METATILE_Mauville_Door_CyclingRoad    0x289
+//#define METATILE_Mauville_Door_CyclingRoad    0x289
 #define METATILE_Mauville_Door_Verdanturf     0x3A1
 #define METATILE_Mauville_MirageTower_Tile0   0x3D8
 #define METATILE_Mauville_MirageTower_Tile1   0x3D9
@@ -389,6 +389,7 @@
 #define METATILE_Petalburg_Door_BirchsLab   0x249
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
+#define METATILE_Petalburg_Door_Twinleaf2   0x289
 
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_Door                0x224
