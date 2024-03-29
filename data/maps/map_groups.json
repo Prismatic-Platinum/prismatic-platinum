@@ -35,7 +35,8 @@
     "TwinleafTown_DawnsHouse_1F",
     "TwinleafTown_BarrysHouse_1F",
     "TwinleafTown_BarrysHouse_2F",
-    "TwinleafTown_IndoorLeft"
+    "TwinleafTown_IndoorLeft",
+    "TwinleafTown_IndoorRight"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",

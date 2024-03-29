@@ -1110,6 +1110,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/TwinleafTown_IndoorLeft/border.bin",
       "blockdata_filepath": "data/layouts/TwinleafTown_IndoorLeft/map.bin"
+    },
+    {
+      "id": "LAYOUT_TWINLEAF_TOWN_INDOOR_RIGHT",
+      "name": "TwinleafTown_IndoorRight_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/TwinleafTown_IndoorRight/border.bin",
+      "blockdata_filepath": "data/layouts/TwinleafTown_IndoorRight/map.bin"
     }
   ]
 }

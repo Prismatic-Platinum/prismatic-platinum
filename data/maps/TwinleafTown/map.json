@@ -21,30 +21,30 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_DP_CYNTHIA",
-      "x": 11,
-      "y": 17,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 4,
-      "movement_range_y": 4,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "TwinleafTown_EventScript_Cynthia",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 13,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 7,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_11"
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 17,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -59,8 +59,8 @@
       "x": 15,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_TWINLEAF_TOWN",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_TWINLEAF_TOWN_INDOOR_RIGHT",
+      "dest_warp_id": "0"
     },
     {
       "x": 5,
