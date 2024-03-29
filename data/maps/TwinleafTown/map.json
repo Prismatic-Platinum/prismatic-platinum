@@ -66,8 +66,8 @@
       "x": 5,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_TWINLEAF_TOWN",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_TWINLEAF_TOWN_INDOOR_LEFT",
+      "dest_warp_id": "0"
     },
     {
       "x": 15,
