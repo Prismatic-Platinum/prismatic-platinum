@@ -1611,13 +1611,19 @@ static bool8 RunFieldCallback(void)
     return TRUE;
 }
 
+static void SetInitialPlayerAvatarStateWithDirection(u8 dirn)
+{
+    sInitialPlayerAvatarState.direction = dirn;
+    sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_ON_FOOT;
+}
+
 void CB2_NewGame(void)
 {
     FieldClearVBlankHBlankCallbacks();
     StopMapMusic();
     ResetSafariZoneFlag_();
     NewGameInitData();
-    ResetInitialPlayerAvatarState();
+    SetInitialPlayerAvatarStateWithDirection(DIR_NORTH);
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
